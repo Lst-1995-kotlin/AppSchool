@@ -2,6 +2,7 @@ import java.lang.NumberFormatException
 import java.util.Scanner
 
 // 깃 테스트
+// 깃 -> 로컬 테스트
 
 // 플레이어가 입력한 위치에 대한 정보를 저장할 이차원 배열
 val board = Array(3) { Array<String>(3, {" "}) }
