@@ -1,9 +1,7 @@
 import java.lang.NumberFormatException
 import java.util.Scanner
 
-// 깃 테스트
-// 깃 -> 로컬 테스트
-// 메인 클래스도 수정하는데 temp만 수정할래
+// 깃 한번에 커밋 및 푸시 테스트
 
 
 // 플레이어가 입력한 위치에 대한 정보를 저장할 이차원 배열
