@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                 requestFocus()
 
                 setOnEditorActionListener { v, actionId, event ->
-                    true
+                    false
                 }
             }
 
@@ -70,14 +70,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun textViewUpdate(oper: String) {
-        when(oper){
-            "+" -> {
-                activityMainBinding.textView.run {
-                    text = ""
-                    editableText
-                }
-            }
 
+        when(oper){
+            "+" -> activityMainBinding.run{
+                val num1 = editTextNumber.text.toString().toInt()
+                val num2 = editTextNumber2.text.toString().toInt()
+                textView.text = "$num1 + $num2 = ${num1 + num2}"
+            }
+            "-" -> activityMainBinding.run{
+                val num1 = editTextNumber.text.toString().toInt()
+                val num2 = editTextNumber2.text.toString().toInt()
+                textView.text = "$num1 - $num2 = ${num1 - num2}"
+            }
+            "*" -> activityMainBinding.run{
+                val num1 = editTextNumber.text.toString().toInt()
+                val num2 = editTextNumber2.text.toString().toInt()
+                textView.text = "$num1 * $num2 = ${num1 * num2}"
+            }
+            "/" -> activityMainBinding.run{
+                val num1 = editTextNumber.text.toString().toInt()
+                val num2 = editTextNumber2.text.toString().toInt()
+                textView.text = "$num1 / $num2 = ${num1 / num2}"
+            }
 
             else -> return
         }
