@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
+    android:visibility="visible"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -85,7 +86,8 @@
                         android:text="전체"
                         android:textAlignment="center"
                         android:textColor="#000000"
-                        android:textSize="25sp" />
+                        android:textSize="25sp"
+                        app:chipIconVisible="true" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chipAge12"
@@ -98,7 +100,8 @@
                         android:text="12세"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
-                        android:textSize="25sp" />
+                        android:textSize="25sp"
+                        app:chipIconVisible="true" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chipAge15"
@@ -110,7 +113,8 @@
                         android:text="15세"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
-                        android:textSize="25sp" />
+                        android:textSize="25sp"
+                        app:checkedIconVisible="true" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chipAgeAdult"
