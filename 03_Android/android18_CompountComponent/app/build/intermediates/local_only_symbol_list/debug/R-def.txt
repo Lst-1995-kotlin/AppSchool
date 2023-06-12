@@ -1,0 +1,30 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id button
+id button2
+id button3
+id button4
+id checkBox
+id checkBox2
+id checkBox3
+id radioButton
+id radioButton2
+id radioButton3
+id radioButton4
+id radioButton5
+id radioButton6
+id radioGroup1
+id radioGroup2
+id textView
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.Android18_CompountComponent
+style Theme.Android18_CompountComponent
+xml backup_rules
+xml data_extraction_rules

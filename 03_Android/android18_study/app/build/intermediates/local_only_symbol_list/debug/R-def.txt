@@ -1,0 +1,29 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id ageLayout
+id ageLayoutText
+id hobby1
+id hobby2
+id hobby3
+id korScore
+id mainScroll
+id men
+id nameText
+id printBtn
+id selectMenWomen
+id stdPrintTextView
+id textView
+id textView2
+id women
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.Android18_study
+style Theme.Android18_study
+xml backup_rules
+xml data_extraction_rules

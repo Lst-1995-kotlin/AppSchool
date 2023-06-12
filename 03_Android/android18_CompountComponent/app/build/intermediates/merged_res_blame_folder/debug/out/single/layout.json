@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\wkfsk\\.gradle\\daemon\\8.0\\com.test.android18_compountcomponent.app-mergeDebugResources-27:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\wkfsk\\.gradle\\daemon\\8.0\\com.test.android18_compountcomponent.app-main-30:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.test.android18_compountcomponent.app-mergeDebugResources-27:/layout/activity_main.xml",
+        "source": "com.test.android18_compountcomponent.app-main-30:/layout/activity_main.xml"
+    }
+]

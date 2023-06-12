@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\lecture\\.gradle\\daemon\\8.0\\com.test.android15_scrollview.app-mergeDebugResources-27:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\lecture\\.gradle\\daemon\\8.0\\com.test.android15_scrollview.app-main-30:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.test.android15_scrollview.app-mergeDebugResources-27:/layout/activity_main.xml",
+        "source": "com.test.android15_scrollview.app-main-30:/layout/activity_main.xml"
+    }
+]

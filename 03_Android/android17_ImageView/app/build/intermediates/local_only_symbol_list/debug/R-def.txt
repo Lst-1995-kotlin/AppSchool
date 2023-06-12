@@ -1,0 +1,18 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable img_android
+id button
+id imageView
+id imageView2
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.Android17_ImageView
+style Theme.Android17_ImageView
+xml backup_rules
+xml data_extraction_rules

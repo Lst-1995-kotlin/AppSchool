@@ -37,6 +37,30 @@
                 android:text="TextView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
             <ToggleButton
                 android:id="@+id/toggleButton"
                 android:layout_width="match_parent"
@@ -44,6 +68,18 @@
                 android:text="ToggleButton"
                 android:textOff="Off 상태 입니다."
                 android:textOn="On 상태 입니다." />
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:showText="true"
+                android:text="스위치"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textOff="OFF"
+                android:textOn="ON"
+                android:thumb="@mipmap/ic_launcher"
+                android:track="@android:drawable/bottom_bar" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
