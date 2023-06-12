@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextMovieTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="영화제목"
+                android:inputType="text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="영화 가격을 설정 해주세요."
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <SeekBar
+                android:id="@+id/seekBarMovePrice"
+                style="@android:style/Widget.Material.SeekBar.Discrete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:max="20"
+                android:min="5"
+                android:progress="5" />
+
+
+            <TextView
+                android:id="@+id/textViewPriceText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5000원"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="관람 등급을 선택해주세요."
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipLookAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:checkedChip="@id/chipAgeAll"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipAgeAll"
+                        style="@style/Widget.Material3.Chip.Suggestion.Elevated"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="#4CAF50"
+                        android:checkable="true"
+                        android:text="전체"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="25sp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipAge12"
+                        style="@style/Widget.Material3.Chip.Suggestion.Elevated"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="#FFEB3B"
+                        android:checkable="true"
+                        android:text="12세"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="25sp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipAge15"
+                        style="@style/Widget.Material3.Chip.Suggestion.Elevated"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="#3F51B5"
+                        android:text="15세"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="25sp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipAgeAdult"
+                        style="@style/Widget.Material3.Chip.Suggestion.Elevated"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="#FF0000"
+                        android:text="성인"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="25sp" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <TextView
+                    android:id="@+id/textViewSelectLookAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="전체연령가 선택되었습니다."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="별점을 입력해주세요."
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <RatingBar
+                android:id="@+id/ratingBar3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:max="5"
+                android:numStars="5"
+                android:rating="0"
+                android:stepSize="0.5" />
+
+            <TextView
+                android:id="@+id/textViewStarPoint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <EditText
+                android:id="@+id/editTextMDName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="감독 이름"
+                android:inputType="text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <Button
+                android:id="@+id/buttonLoadData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="저장된 결과 보기"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewPrintData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
