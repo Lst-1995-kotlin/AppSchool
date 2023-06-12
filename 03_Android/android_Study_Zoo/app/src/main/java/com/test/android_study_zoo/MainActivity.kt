@@ -71,14 +71,14 @@ class MainActivity : AppCompatActivity() {
                         }
                         // 아무것도 선택되지 않은 경우
                         else -> {
-                            LinearLayoutElephant.isVisible = false
-                            LinearLayoutCat.isVisible = false
-                            LinearLayoutDog.isVisible = false
-
                             if(currentFocus != null){
                                 imm.hideSoftInputFromWindow(currentFocus!!.windowToken,0)
                                 currentFocus!!.clearFocus()
                             }
+                            LinearLayoutElephant.isVisible = false
+                            LinearLayoutCat.isVisible = false
+                            LinearLayoutDog.isVisible = false
+
                         }
                     }
                 }
@@ -101,12 +101,9 @@ class MainActivity : AppCompatActivity() {
                 false
             }
 
-
             // 냥 펀치 입력 후 엔터키
-
             editTextCatPunchSpeed.setOnEditorActionListener { v, actionId, event ->
                 animalList.add(Cat("고양이","고양이 사료",editTextCatName.text.toString(),editTextCatPunchSpeed.text.toString()))
-
                 if(currentFocus != null){
                     imm.hideSoftInputFromWindow(currentFocus!!.windowToken,0)
                     currentFocus!!.clearFocus()
@@ -119,9 +116,7 @@ class MainActivity : AppCompatActivity() {
                 false
             }
 
-
             // 개인기 개수 입력 후 엔터키
-
             editTextDogPerforCount.setOnEditorActionListener { v, actionId, event ->
                 animalList.add(Dog("강아지","강아지 사료", editTextDogName.text.toString(), editTextDogPerforCount.text.toString()))
 
@@ -141,13 +136,10 @@ class MainActivity : AppCompatActivity() {
             ButtonPrintInfo.run{
                 setOnClickListener {
 
-
                     if(currentFocus != null){
-                        imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
                         imm.hideSoftInputFromWindow(currentFocus!!.windowToken,0)
                         currentFocus!!.clearFocus()
                     }
-
 
                     textViewPrintInfo.text = ""
 
