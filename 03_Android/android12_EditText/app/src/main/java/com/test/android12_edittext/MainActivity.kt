@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                     false
                 }
 
-                // 입력 감시자 설장
+                // 입력 감시자 설정
                 val editTextWatcher1 = EditTextWatcher1()
                 addTextChangedListener(editTextWatcher1)
 

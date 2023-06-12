@@ -10,26 +10,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c31d7467-0933-4034-9aef-25a5dbb5c383" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gradle/8.0/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/8.0/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/8.0/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/8.0/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/8.0/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/8.0/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/8.0/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/8.0/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/8.0/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android06_ConstraintLayoutEXStudy/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android06_ConstraintLayoutEXStudy/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android06_ConstraintLayoutEXStudy/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android06_ConstraintLayoutEXStudy/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android03_ViewBindingEx/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android03_ViewBindingEx/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android03_ViewBindingEx/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android03_ViewBindingEx/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android03_ViewBindingEx/app/src/main/java/com/test/android03_viewbindingex/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android03_ViewBindingEx/app/src/main/java/com/test/android03_viewbindingex/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android06_ConstraintLayout/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android06_ConstraintLayout/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android06_ConstraintLayout/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android06_ConstraintLayout/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android07_constraintlayoutEX/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android07_constraintlayoutEX/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android07_constraintlayoutEX/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android07_constraintlayoutEX/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android08_space/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android08_space/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android08_space/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android08_space/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android08_space/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android08_space/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android09_IncludeOtherLayout/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android09_IncludeOtherLayout/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android09_IncludeOtherLayout/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android09_IncludeOtherLayout/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android11_Button/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android11_Button/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android11_Button/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android11_Button/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android12_EditText/app/src/main/java/com/test/android12_edittext/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android12_EditText/app/src/main/java/com/test/android12_edittext/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android13_LogCat/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android13_LogCat/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android13_LogCat/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android13_LogCat/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android14_EX02/app/src/main/java/com/test/android14_ex02/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android14_EX02/app/src/main/java/com/test/android14_ex02/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android14_EX02_Teacher/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android14_EX02_Teacher/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android14_EX02_Teacher/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android14_EX02_Teacher/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../local.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android18_study/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../android18_study/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android18_study/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android18_study/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android19_EX01/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android19_EX01/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android19_EX01/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android19_EX01/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android25_HomeWorkMovie/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android25_HomeWorkMovie/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android25_HomeWorkMovie/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android25_HomeWorkMovie/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_Study_Zoo/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android_Study_Zoo/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_Study_Zoo/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android_Study_Zoo/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_Study_Zoo/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android_Study_Zoo/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_Study_Zoo/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android_Study_Zoo/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_Study_Zoo/app/src/main/java/com/test/android_study_zoo/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android_Study_Zoo/app/src/main/java/com/test/android_study_zoo/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android_Study_Zoo/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android_Study_Zoo/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +67,6 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2QweOKVqpXtRt28w6AYoXDxFZg4" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -64,10 +78,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/workspace/AppSchool/03_Android/android14_EX03",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "last_opened_file_path": "C:/workspace/AppSchool/03_Android/android16_TextInputLayout"
   }
 }]]></component>
   <component name="RunManager">
@@ -125,7 +136,9 @@
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
-      <method v="2" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
