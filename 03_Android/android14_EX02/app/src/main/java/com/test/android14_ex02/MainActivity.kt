@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                         imm.hideSoftInputFromWindow(windowToken,0)
                         currentFocus!!.clearFocus()
                     }
-                    true
+                    false
                 }
             }
 
