@@ -22,10 +22,10 @@ com.test.android18_study.app-activity-1.6.0-20 C:\Users\wkfsk\.gradle\caches\tra
 com.test.android18_study.app-fragment-1.3.6-21 C:\Users\wkfsk\.gradle\caches\transforms-3\e6f534ac849b830fbe362816f59a9aae\transformed\fragment-1.3.6\res
 com.test.android18_study.app-emoji2-1.2.0-22 C:\Users\wkfsk\.gradle\caches\transforms-3\ed5c533cc70e7b3b025c1d493dfcade0\transformed\emoji2-1.2.0\res
 com.test.android18_study.app-emoji2-views-helper-1.2.0-23 C:\Users\wkfsk\.gradle\caches\transforms-3\fcfe10e7a781411b84014d8bff097533\transformed\emoji2-views-helper-1.2.0\res
-com.test.android18_study.app-pngs-24 C:\workspace\03_Android\android18_study\app\build\generated\res\pngs\debug
-com.test.android18_study.app-resValues-25 C:\workspace\03_Android\android18_study\app\build\generated\res\resValues\debug
-com.test.android18_study.app-packageDebugResources-26 C:\workspace\03_Android\android18_study\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.test.android18_study.app-packageDebugResources-27 C:\workspace\03_Android\android18_study\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.test.android18_study.app-merged_res-28 C:\workspace\03_Android\android18_study\app\build\intermediates\merged_res\debug
-com.test.android18_study.app-debug-29 C:\workspace\03_Android\android18_study\app\src\debug\res
-com.test.android18_study.app-main-30 C:\workspace\03_Android\android18_study\app\src\main\res
+com.test.android18_study.app-pngs-24 C:\workspace\AppSchool\03_Android\android18_study\app\build\generated\res\pngs\debug
+com.test.android18_study.app-resValues-25 C:\workspace\AppSchool\03_Android\android18_study\app\build\generated\res\resValues\debug
+com.test.android18_study.app-packageDebugResources-26 C:\workspace\AppSchool\03_Android\android18_study\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.test.android18_study.app-packageDebugResources-27 C:\workspace\AppSchool\03_Android\android18_study\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.test.android18_study.app-merged_res-28 C:\workspace\AppSchool\03_Android\android18_study\app\build\intermediates\merged_res\debug
+com.test.android18_study.app-debug-29 C:\workspace\AppSchool\03_Android\android18_study\app\src\debug\res
+com.test.android18_study.app-main-30 C:\workspace\AppSchool\03_Android\android18_study\app\src\main\res
