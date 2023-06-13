@@ -87,12 +87,8 @@ class MainActivity : AppCompatActivity() {
             // 코 길이 입력 후 엔터키
 
             editTextElephantNoseLength.setOnEditorActionListener { v, actionId, event ->
-                animalList.add(Elephant("코끼리","나뭇잎",editTextElephantName.text.toString(),editTextElephantNoseLength.text.toString()))
+                animalList.add( Elephant("코끼리","나뭇잎",editTextElephantName.text.toString(),editTextElephantNoseLength.text.toString()) )
 
-                if(currentFocus != null){
-                    imm.hideSoftInputFromWindow(currentFocus!!.windowToken,0)
-                    currentFocus!!.clearFocus()
-                }
 
                 editTextElephantName.text.clear()
                 editTextElephantNoseLength.text.clear()
@@ -104,10 +100,6 @@ class MainActivity : AppCompatActivity() {
             // 냥 펀치 입력 후 엔터키
             editTextCatPunchSpeed.setOnEditorActionListener { v, actionId, event ->
                 animalList.add(Cat("고양이","고양이 사료",editTextCatName.text.toString(),editTextCatPunchSpeed.text.toString()))
-                if(currentFocus != null){
-                    imm.hideSoftInputFromWindow(currentFocus!!.windowToken,0)
-                    currentFocus!!.clearFocus()
-                }
 
                 editTextCatName.text.clear()
                 editTextCatPunchSpeed.text.clear()
@@ -119,11 +111,6 @@ class MainActivity : AppCompatActivity() {
             // 개인기 개수 입력 후 엔터키
             editTextDogPerforCount.setOnEditorActionListener { v, actionId, event ->
                 animalList.add(Dog("강아지","강아지 사료", editTextDogName.text.toString(), editTextDogPerforCount.text.toString()))
-
-                if(currentFocus != null){
-                    imm.hideSoftInputFromWindow(currentFocus!!.windowToken,0)
-                    currentFocus!!.clearFocus()
-                }
 
                 editTextCatName.text.clear()
                 editTextCatPunchSpeed.text.clear()

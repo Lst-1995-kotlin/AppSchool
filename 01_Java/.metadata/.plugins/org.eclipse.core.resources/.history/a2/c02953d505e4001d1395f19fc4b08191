@@ -1,0 +1,58 @@
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 산술연산자
+		// 사칙연산과 나머지를 구한다.
+		// 더하기
+		int a1 = 10 + 3;
+		// 빼기
+		int a2 = 10 - 3;
+		// 곱하기
+		int a3 = 10 * 3;
+		// 나누기
+		int a4 = 10 / 3;
+		// 나머지
+		int a5 = 10 % 3;
+		
+		double a6 = 10.0 / 3.0;
+		
+		System.out.printf("a1 : %d\n",a1);
+		System.out.printf("a2 : %d\n",a2);
+		System.out.printf("a3 : %d\n",a3);
+		System.out.printf("a4 : %d\n",a4);
+		System.out.printf("a5 : %d\n",a5);
+		System.out.printf("a6 : %f\n",a6);
+		
+		double a7 = 10 / 3.0;
+		double a8 = 10.0 / 3;
+		System.out.printf("a7: %f\n", a7);
+		System.out.printf("a8: %f\n", a8);
+		
+		// 최우선 연산자
+		// . 은 객체, []는 배열할 때 살펴보게쓰습니다.....
+		// () : 수학과 같이 가장 먼저 계산을 할 부분을 설정한다.
+		int b1 = 10 + 2 * 4;
+		int b2 = (10 + 2) * 4;
+		
+		System.out.printf("b1 : %d\n", b1);
+		System.out.printf("b2 : %d\n", b2);
+		
+		// 단항 연산자
+		/// ! : true를 false로 false를 true로 바꿔준다.
+		boolean c1 = true;
+		boolean c2 = !c1;
+		boolean c3 = !c2;
+		System.out.printf("c1: %s\n", c1);
+		System.out.printf("c2: %s\n", c2);
+		System.out.printf("c3: %s\n", c3);
+		
+		// ~ : 비트 0을 1로, 비트 1을 0으로 변환해준다.
+		int d1 = 100;
+		System.out.printf("%32s\n", Integer.toBinaryString(d1));
+		
+		
+	}
+
+}
