@@ -1,0 +1,120 @@
+[공통]
+layout_width : 뷰의 가로길이. dp 단위 값, wrap_content, match_parent
+layout_height : 뷰의 세로길이, dp 단위 값, wrap_content, match_parent
+(wrap_conent : 자기를 완변하게 표현할 수 있는 최소 사이즈,  match_parent : 레이아웃 크기에 꽉 채운다)
+layout_margin : 뷰의 상하좌우 여백을 설정한다
+padding : 뷰의 안쪽 여백을 설정한다.
+
+[LinearLayout]
+orientation : 뷰가 배치되는 모양. horizontal(좌측에서 우측으로, 생략), vertical(위에서 아래로)
+
+[LinearLayout에 배치되는 뷰]
+layout_weight : 뷰가 차지할 크기 비율. LinearLayout의 orientation 속성이 horizontal 이라면 가로크기를 조정하고 veritcal이면 세로 길이를 조정한다
+
+[Space]
+layout_width, layout_height를 통해 여백을 설정한다.
+
+[TextView]
+text : 표시할 문자열을 설정
+textAppearance : 미리 설정되어 있는 문자열 관련 셋팅
+fontFamily : 폰트. 코드를 통해 설정하는 것을 권장한다(한글 때문에..)
+typeface : 폰트에서 지원을 한다면 serif, monospace 등을 설정할 수 있다
+textSize : sp 단위의 글자 수
+lineSpacingExtra : 라인 간격
+textColor : 글자 색상
+textStyle : 볼드, 이탤릭, 모두 대문자 설정
+textAlignment : 정렬
+alpha : 투명도
+lines : 최대 줄 수. 생략하면 무한대로 설정된다.
+
+[Button]
+text : 표시할 문자열
+
+[ImageButton]
+srcCompat : 표시할 이미지
+이미지 버튼을 사용할 때는 background 색상에 투명도를 0으로 설정해서 사용하세요
+
+[EditText]
+inputType : 입력에 대한 모습과 키보드 등을 설정할 수 있다.
+hint : 입력되어 있는 것이 없을 나타나는 문자열. 입력에 대한 안내 문구를 표시할 때 사용한다.
+text : 문자열을 설정한다
+
+[TextInputLayout]
+hint : 안내문구
+counterEnbled : 글자수를 보여준다.
+counterMaxLength : 최대 글자수를 보여주고 넘어가면 붉은색으로 표시해준다.
+
+[ImageView]
+srcCompat : 보여줄 이미지를 지정한다.
+
+[CheckBox]
+textAppearance : 글자크기
+text : 체크박스에 표시할 문자열
+checked : 선택여부를 설정한다. true 설정, false나 생략은 설정하지 않는 것
+
+[RadioGroup]
+id : 라디오 그룹의 id
+checkedButton : 체크상태로 설정할 라디오 버튼을 고른다
+
+[RadioButton]
+textAppearance : 글자크기
+text : 라디오 버튼에 표시할 문자열
+
+[ToggleButton]
+textOff : Off 상태일 때 표시하는 문자열
+textOn : On 상태일 때 표시하는 문자열
+
+[Switch]
+text : 좌측에 나타나는 문자열
+textOn : ON 상태일 때 표시할 문자열
+textOff : OFF 상태일 때 표시할 문자열
+showText : textOn, TextOff 에 설정할 문자열을 보여줄 것인가
+thumb : 버튼 이미지
+track : 트랙 이미지
+
+[CheckedTextView]
+clickable : 터치에 대해 반응하도록 설정한다.
+text : 표시할 문자열
+checkMark : 체크 표시 이미지
+drawableLeft : 좌측에 표시할 이미지
+drawableRight : 우측에 표시할 이미지
+drawableTop : 상단에 표시할 이미지
+drawableBottom : 하단에 표시할 이미지
+
+[Chip]
+style : chip의 모양을 설정한다. 생략시 Action, Choice, Entry, Filter
+Checkable : 체크가 가능한가.
+Text : 표시할 문자열
+chipicon : chip에 표시할 아이콘
+chipIconVisible : chip 아이콘을 표시할 것인가
+checkedIcon : 선택되었을 때의 아이콘
+checkedIconVisible : 선택되었을 때의 아이콘을 표시할 것인
+
+[ChipGroup]
+singleSelection : 하나만 선택되게 할 것인가
+checkedChip : 시작할 때 선택되어 있을 chip 선택
+
+[ProgressBar]
+style : 모양. 크기 혹은 bar 형태
+max : 최대 값
+progress : 현재 값
+
+[SeekBar]
+style : 모양
+max : 최대값
+prgress : 현재값
+
+[RatingBar]
+style : 모양(크기가 조절된다)
+numStarts : 별의 개수
+rating : 현재 값
+stepSize : 설정할 별 값 단위
+isIndicator : 사용자 설정 가능 여부
+
+[CardView]
+cardCornerRadius : CardView 꼭지점 둥글기 정도
+contentPadding  : CardView 내부 여백
+cardElevation : CarView에 그림자를 주는 정도
+
+[FloatingActionButton]
+srcCompat : 버튼에 보여줄 이미지
