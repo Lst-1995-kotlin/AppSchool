@@ -56,7 +56,9 @@ class MainActivity : AppCompatActivity() {
                 // 항목 View의 크기가 다를 경우 GridLayoutMannager는 같은 행의 모든 뷰가 같은 크기로 조정되지만
                 // StaggeredGridLayoutManager는 항목 View의 크기는 필요한 만큼만 사용하고
                 // 화면에 빈칸이 없도록 배치를 조정해준다.
+                // 움직이는 방향 세로
                 //layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+                // 움직이는 방향 가로
                 //layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL)
             }
         }
