@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
                 // 0부터 시작하는 순서 값을 넣어준다.
                 setSelection(2)
 
+
                 // 항목을 선택하면 동작하는 리스너
                 // 3번째 : 선택한 항목의 순서값(0부터..)
                 onItemSelectedListener = object : OnItemSelectedListener{

@@ -23,6 +23,10 @@ class MainActivity : AppCompatActivity() {
 
         activityMainBinding.run{
 
+            listViewMain.run{
+                adapter = CustomAdapter()
+            }
+
             editTextMain.run{
                 setOnEditorActionListener { v, actionId, event ->
                     dataList.add(text.toString())
@@ -35,7 +39,6 @@ class MainActivity : AppCompatActivity() {
                     false
                 }
             }
-
 
         }
 
@@ -59,18 +62,17 @@ class MainActivity : AppCompatActivity() {
             var rowBinding : RowBinding
             var rowView = convertView
 
-
-            if(rowView == null){
+            if(convertView == null){
                 rowBinding = RowBinding.inflate(layoutInflater)
                 rowView = rowBinding.root
 
-                rowView!!.tag = rowBinding.root
-
+                rowView.tag = rowBinding
             } else {
                 rowBinding = rowView!!.tag as RowBinding
             }
 
             rowBinding.run {
+
                 textViewRow.run{
                     text = dataList[position]
                 }
@@ -80,7 +82,6 @@ class MainActivity : AppCompatActivity() {
                         dataList.removeAt(position)
 
                         val adapter = activityMainBinding.listViewMain.adapter as CustomAdapter
-
                         adapter.notifyDataSetChanged()
 
                     }

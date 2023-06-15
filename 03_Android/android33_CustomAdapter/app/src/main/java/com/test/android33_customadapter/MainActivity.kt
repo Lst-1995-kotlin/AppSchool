@@ -38,17 +38,14 @@ class MainActivity : AppCompatActivity() {
         // 리스트뷰의 row의 개수를 결정하는 메서드
         // 이 메서드가 반환하는 정수 만큼 row를 생성한다.
         override fun getCount(): Int {
-            //TODO("Not yet implemented")
             return data1.size
         }
         // 현재 번째의 row View를 반환하도록 만들어준다.
         override fun getItem(position: Int): Any? {
-            //TODO("Not yet implemented")
             return null
         }
         // 현재 번째의 row View의 ID를 반환하도록 만들어준다.
         override fun getItemId(position: Int): Long {
-            //TODO("Not yet implemented")
             return 0
         }
         // row로 사용할 View를 생성하여 반환하는 메서드

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.test.android36_recyclerviewstudy.databinding.ActivityMainBinding
 import com.test.android36_recyclerviewstudy.databinding.RowBinding
+import org.w3c.dom.Text
 
 data class Student(
     var name: String,

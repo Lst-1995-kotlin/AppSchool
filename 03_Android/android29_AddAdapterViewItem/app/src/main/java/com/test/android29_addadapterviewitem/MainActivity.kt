@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
             listView.run{
                 adapter = ArrayAdapter<String>(
-                    this@MainActivity, android.R.layout.simple_list_item_1, rowList
+                    this@MainActivity, R.layout.simple_list_item_1, rowList
                 )
             }
 
