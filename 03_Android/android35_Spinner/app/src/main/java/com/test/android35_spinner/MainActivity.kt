@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+
             button.run{
                 setOnClickListener {
                     // Spinner에서 선택된 항목의 순서값을 가져온다.
