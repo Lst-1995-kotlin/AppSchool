@@ -147,9 +147,6 @@ class MainActivity : AppCompatActivity() {
             )
             rowBinding.root.layoutParams = params
 
-
-
-
             return viewHolderClass
         }
 

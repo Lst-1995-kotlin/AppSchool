@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             registerForContextMenu(listView)
 
             button.run{
+
                 setOnClickListener {
                     // 팝업 메뉴 객체를 생성한다.
                     // 제일 상단에 있는 TextView에 나타날 메뉴이다
