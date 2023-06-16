@@ -108,7 +108,6 @@ class MainActivity : AppCompatActivity() {
 
     inner class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolderClass>(){
 
-        // 값 가져오기
         inner class ViewHolderClass(rowBinding: RowBinding):  RecyclerView.ViewHolder(rowBinding.root){
             var name : TextView
             var age : TextView
@@ -129,8 +128,6 @@ class MainActivity : AppCompatActivity() {
             val rowBinding = RowBinding.inflate(layoutInflater)
             val viewHolderClass = ViewHolderClass(rowBinding)
 
-
-            // 디자인 부분 공부하기
             val params = RecyclerView.LayoutParams(
                 RecyclerView.LayoutParams.MATCH_PARENT,
                 RecyclerView.LayoutParams.WRAP_CONTENT
@@ -159,16 +156,11 @@ class MainActivity : AppCompatActivity() {
                     adapter.notifyDataSetChanged()
 
                 }
-
             }
-
-
 
         }
 
-
     }
-
 
     data class Student(
         var name: String,

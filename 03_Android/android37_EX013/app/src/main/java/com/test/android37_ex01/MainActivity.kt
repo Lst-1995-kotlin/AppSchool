@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.test.android37_ex01.databinding.ActivityMainBinding
 import com.test.android37_ex01.databinding.RowBinding
 
+
+// 강사님 코드
 class MainActivity : AppCompatActivity() {
     lateinit var activityMainBinding: ActivityMainBinding
 
