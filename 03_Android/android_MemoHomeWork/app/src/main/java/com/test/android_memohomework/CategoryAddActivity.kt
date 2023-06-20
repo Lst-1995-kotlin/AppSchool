@@ -15,6 +15,21 @@ class CategoryAddActivity : AppCompatActivity() {
         setContentView(activityCategoryAddBinding.root)
 
         activityCategoryAddBinding.run{
+            buttonCategoryAdd.run{
+                setOnClickListener {
+                    val resultIntent = Intent()
+                    resultIntent.putExtra("addCategory",editTextAddCategoryName.text.toString())
+                    setResult(RESULT_OK,resultIntent)
+                    finish()
+                }
+            }
+
+            buttonCategoryCancel.run {
+                setOnClickListener {
+                    setResult(RESULT_CANCELED)
+                    finish()
+                }
+            }
 
         }
     }
