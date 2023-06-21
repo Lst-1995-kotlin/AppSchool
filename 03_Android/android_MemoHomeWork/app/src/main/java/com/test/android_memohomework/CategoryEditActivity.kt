@@ -18,6 +18,30 @@ class CategoryEditActivity : AppCompatActivity() {
 
         categoryEditBinding.run {
 
+            textViewNowAct.text = "카테고리 수정 액티비티"
+            val oriName = intent.getStringExtra("oriName")
+            if(oriName != null){
+                textViewCategoryName.text = "수정 카테고리명 : $oriName"
+            }
+
+            buttonSave.run{
+                setOnClickListener {
+                    // 변경할 이름 전달
+                    val resultIntent = Intent()
+                    resultIntent.putExtra("newCategory",editTextChangeCategoryName.text.toString())
+                    resultIntent.putExtra("oriCategory",oriName)
+                    setResult(RESULT_OK, resultIntent)
+
+                    finish()
+                }
+            }
+
+            buttonCencle.run{
+                setOnClickListener {
+                    setResult(RESULT_CANCELED)
+                    finish()
+                }
+            }
 
         }
     }

@@ -3,7 +3,6 @@ package com.test.android_memohomework
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.SystemClock
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -14,32 +13,27 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.test.android_memohomework.category_memo.Category
 import com.test.android_memohomework.category_memo.Memo
 import com.test.android_memohomework.category_memo.TotalData
 import com.test.android_memohomework.databinding.ActivityMainBinding
 import com.test.android_memohomework.databinding.CategorynameBinding
-import kotlin.concurrent.thread
 
 
 class MainActivity : AppCompatActivity() {
 
-    var categoryManger = TotalData()
+    // 전체적인 데이터를 저장 용도
+    // key : 카테고리 이름
+    // value : 해당 카테고리가 가지고 있는 메모리스트
+    var categoryMap = LinkedHashMap<String, ArrayList<Memo>>()
 
     lateinit var activityMainBinding: ActivityMainBinding
-
+    // 카테고리 추가 액티비티
     lateinit var categoryAddActivityLauncher: ActivityResultLauncher<Intent>
-
+    // 카테고리 수정 액티비티
     lateinit var categoryEditActivityLauncher: ActivityResultLauncher<Intent>
+    // 카테고리 클릭 후 카테고리 메모 확인 액티비티
+    lateinit var showMemoListActivityLauncher: ActivityResultLauncher<Intent>
 
-    // 카테고리 테스트 코드 (액티비티가 실행될 때 진행된다.)
-//    override fun onStart() {
-//        super.onStart()
-//        // 카테고리 테스트 코드
-//        categoryManger.categoryMap["testCategory"] = mutableListOf<Memo>()
-//        val testAdapter = activityMainBinding.mainRecyclerView.adapter as MainRecyclerAdapter
-//        testAdapter.notifyDataSetChanged()
-//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,13 +50,69 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+//---------------------------------------------------------------------------------------------------------
 
+        // 카테고리 메모 확인 액티비티 종료된 후
+        val showMemoListMain = ActivityResultContracts.StartActivityForResult()
+        showMemoListActivityLauncher = registerForActivityResult(showMemoListMain){
+
+            if(it.resultCode == RESULT_OK){
+                if(it.data != null){
+                    val updateCategory = it.data!!.getStringExtra("category")!!
+                    val updateMemoCount = it.data?.getIntExtra("memoCount",0)
+                    var updateMemoList = ArrayList<Memo>()
+
+                    if(updateMemoCount!! > 0){
+                        for(i in 0 .. updateMemoCount!!-1){
+                            val memo = Memo()
+                            memo.title = it.data!!.getStringExtra("title$i")!!
+                            memo.contents = it.data!!.getStringExtra("contents$i")!!
+                            updateMemoList.add(memo)
+                        }
+                        categoryMap[updateCategory] = updateMemoList
+                    }
+
+
+                    Log.d("멋사","업데이트 카테고리 명 ${updateCategory}")
+                    Log.d("멋사","업데이트 카운트 ${updateMemoCount}")
+                    Log.d("멋사","업데이트 카테고리 자료 ${updateMemoList.toMutableList()}")
+
+                    val updateAdapter = activityMainBinding.mainRecyclerView.adapter as MainRecyclerAdapter
+                    updateAdapter.notifyDataSetChanged()
+
+                    Log.d("멋사","업데이트 맵 키-값 조회 ${categoryMap[updateCategory]?.toMutableList()}")
+
+                }
+
+            }
+
+        }
 
 //---------------------------------------------------------------------------------------------------------
         // 카테고리 이름 수정하는 액티비티 종료된 후
         val categoryEditMain = ActivityResultContracts.StartActivityForResult()
         categoryEditActivityLauncher = registerForActivityResult(categoryEditMain){
+            if(it.resultCode == RESULT_OK){
 
+                val new = it.data!!.getStringExtra("newCategory").toString()
+                val ori = it.data!!.getStringExtra("oriCategory").toString()
+
+                val newMap = LinkedHashMap<String, ArrayList<Memo>>()
+
+                categoryMap.forEach {
+                    if(it.key != ori){
+                        newMap[it.key] = it.value
+                    } else {
+                        newMap[new] = it.value
+                    }
+                }
+
+                categoryMap = newMap
+
+                val editAdapter = activityMainBinding.mainRecyclerView.adapter as MainRecyclerAdapter
+                editAdapter.notifyDataSetChanged()
+
+            }
         }
 
 //---------------------------------------------------------------------------------------------------------
@@ -72,9 +122,8 @@ class MainActivity : AppCompatActivity() {
         categoryAddActivityLauncher = registerForActivityResult(categoryAddMain){
             if(it.resultCode == RESULT_OK){
                 val newCategory =  it.data!!.getStringExtra("addCategory")
-                if(newCategory != null){
-                    categoryManger.categoryMap[newCategory] = mutableListOf<Memo>()
-                }
+                categoryMap[newCategory!!] = ArrayList<Memo>()
+
                 val addAdapter = activityMainBinding.mainRecyclerView.adapter as MainRecyclerAdapter
                 addAdapter.notifyDataSetChanged()
             }
@@ -116,13 +165,20 @@ class MainActivity : AppCompatActivity() {
 
                     menu[0].setOnMenuItemClickListener {
                         // 수정 이벤트 처리 기능
+                        val categoryEditIntent = Intent(this@MainActivity, CategoryEditActivity::class.java)
+
+                        val oriCategoryName = categoryMap.keys.toList()[adapterPosition]
+                        categoryEditIntent.putExtra("oriName", oriCategoryName)
+
+                        categoryEditActivityLauncher.launch(categoryEditIntent)
 
                         false
                     }
+
                     menu[1].setOnMenuItemClickListener {
                         // 삭제 이벤트 처리 기능
-                        val removeCategoryName = categoryManger.categoryMap.keys.toList()[adapterPosition]
-                        categoryManger.categoryMap.remove(removeCategoryName)
+                        val removeCategoryName = categoryMap.keys.toList()[adapterPosition]
+                        categoryMap.remove(removeCategoryName)
 
                         this@MainRecyclerAdapter.notifyDataSetChanged()
 
@@ -132,6 +188,20 @@ class MainActivity : AppCompatActivity() {
 
                 // 카테고리를 클릭하였을 때 이벤트 기능
                 categorynameBinding.root.setOnClickListener {
+
+                    val showMemoIntent = Intent(this@MainActivity,ShowMemoListActivity::class.java)
+                    // 해당 카테고리의 이름을 전달해준다.
+                    val categoryName = categoryMap.keys.toList()[adapterPosition]
+                    showMemoIntent.putExtra("category",categoryName)
+
+                    showMemoIntent.putExtra("memoCount",categoryMap[categoryName]!!.size)
+
+                    for(i in 0 .. categoryMap[categoryName]!!.size-1){
+                        showMemoIntent.putExtra("title",categoryMap[categoryName]!![i].title)
+                        showMemoIntent.putExtra("contents",categoryMap[categoryName]!![i].contents)
+                    }
+
+                    showMemoListActivityLauncher.launch(showMemoIntent)
 
                 }
 
@@ -153,11 +223,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun getItemCount(): Int {
-            return categoryManger.categoryMap.keys.size
+            return categoryMap.keys.size
         }
 
         override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
-            holder.categoryName.text = categoryManger.categoryMap.keys.toMutableList()[position]
+            holder.categoryName.text = categoryMap.keys.toList()[position]
 
         }
     }

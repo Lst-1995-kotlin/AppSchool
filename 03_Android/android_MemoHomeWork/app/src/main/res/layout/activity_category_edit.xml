@@ -9,6 +9,13 @@
     tools:context=".CategoryEditActivity">
 
     <TextView
+        android:id="@+id/textViewNowAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView
         android:id="@+id/textViewCategoryName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
