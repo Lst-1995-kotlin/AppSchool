@@ -15,16 +15,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.test.android_memohomework.category_memo.Memo
 import com.test.android_memohomework.category_memo.TotalData
+import com.test.android_memohomework.category_memo.TotalData.Companion.categoryMap
 import com.test.android_memohomework.databinding.ActivityMainBinding
 import com.test.android_memohomework.databinding.CategorynameBinding
 
 
 class MainActivity : AppCompatActivity() {
-
-    // 전체적인 데이터를 저장 용도
-    // key : 카테고리 이름
-    // value : 해당 카테고리가 가지고 있는 메모리스트
-    var categoryMap = LinkedHashMap<String, ArrayList<Memo>>()
 
     lateinit var activityMainBinding: ActivityMainBinding
     // 카테고리 추가 액티비티
@@ -55,37 +51,8 @@ class MainActivity : AppCompatActivity() {
         // 카테고리 메모 확인 액티비티 종료된 후
         val showMemoListMain = ActivityResultContracts.StartActivityForResult()
         showMemoListActivityLauncher = registerForActivityResult(showMemoListMain){
-
-            if(it.resultCode == RESULT_OK){
-                if(it.data != null){
-                    val updateCategory = it.data!!.getStringExtra("category")!!
-                    val updateMemoCount = it.data?.getIntExtra("memoCount",0)
-                    var updateMemoList = ArrayList<Memo>()
-
-                    if(updateMemoCount!! > 0){
-                        for(i in 0 .. updateMemoCount!!-1){
-                            val memo = Memo()
-                            memo.title = it.data!!.getStringExtra("title$i")!!
-                            memo.contents = it.data!!.getStringExtra("contents$i")!!
-                            updateMemoList.add(memo)
-                        }
-                        categoryMap[updateCategory] = updateMemoList
-                    }
-
-
-                    Log.d("멋사","업데이트 카테고리 명 ${updateCategory}")
-                    Log.d("멋사","업데이트 카운트 ${updateMemoCount}")
-                    Log.d("멋사","업데이트 카테고리 자료 ${updateMemoList.toMutableList()}")
-
-                    val updateAdapter = activityMainBinding.mainRecyclerView.adapter as MainRecyclerAdapter
-                    updateAdapter.notifyDataSetChanged()
-
-                    Log.d("멋사","업데이트 맵 키-값 조회 ${categoryMap[updateCategory]?.toMutableList()}")
-
-                }
-
-            }
-
+            val editAdapter = activityMainBinding.mainRecyclerView.adapter as MainRecyclerAdapter
+            editAdapter.notifyDataSetChanged()
         }
 
 //---------------------------------------------------------------------------------------------------------
@@ -197,8 +164,8 @@ class MainActivity : AppCompatActivity() {
                     showMemoIntent.putExtra("memoCount",categoryMap[categoryName]!!.size)
 
                     for(i in 0 .. categoryMap[categoryName]!!.size-1){
-                        showMemoIntent.putExtra("title",categoryMap[categoryName]!![i].title)
-                        showMemoIntent.putExtra("contents",categoryMap[categoryName]!![i].contents)
+                        showMemoIntent.putExtra("title$i",categoryMap[categoryName]!![i].title)
+                        showMemoIntent.putExtra("contents$i",categoryMap[categoryName]!![i].contents)
                     }
 
                     showMemoListActivityLauncher.launch(showMemoIntent)
