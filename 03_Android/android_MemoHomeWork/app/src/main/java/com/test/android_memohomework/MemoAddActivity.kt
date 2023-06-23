@@ -16,7 +16,7 @@ class MemoAddActivity : AppCompatActivity() {
         activityMemoAddbinding = ActivityMemoAddBinding.inflate(layoutInflater)
         setContentView(activityMemoAddbinding.root)
 
-        Log.d("멋사","MemoAddActivity 도착")
+        //Log.d("멋사","MemoAddActivity 도착")
 
         activityMemoAddbinding.run{
 

@@ -17,6 +17,7 @@ import com.test.android_memohomework.category_memo.Memo
 import com.test.android_memohomework.category_memo.TotalData.Companion.categoryMap
 import com.test.android_memohomework.databinding.ActivityShowMemoBinding
 import com.test.android_memohomework.databinding.ActivityShowMemoListBinding
+import com.test.android_memohomework.databinding.MemoitemBinding
 
 
 class ShowMemoListActivity : AppCompatActivity() {
@@ -49,13 +50,15 @@ class ShowMemoListActivity : AppCompatActivity() {
 
             categoryName = intent.getStringExtra("category")!! // 전달받은 카테고리의 이름
 
-            var memoCount = intent.getIntExtra("memoCount",0) // 전달받은 카테고리의 저장되어 있는 메모
-            for(i in 0.. memoCount-1){
-                val memo = Memo()
-                memo.title = intent.getStringExtra("title$i")!!
-                memo.contents = intent.getStringExtra("contents$i")!!
-                memoList.add(memo)
-            }
+//            var memoCount = intent.getIntExtra("memoCount",0) // 전달받은 카테고리의 저장되어 있는 메모
+//            for(i in 0.. memoCount-1){
+//                val memo = Memo()
+//                memo.title = intent.getStringExtra("title$i")!!
+//                memo.contents = intent.getStringExtra("contents$i")!!
+//                memoList.add(memo)
+//            }
+
+            memoList = categoryMap[categoryName]!!
             val firAdapter = ShowMemoRecycler.adapter as MemoRecyclerAdapter
             firAdapter.notifyDataSetChanged()
             nowCategory.text = "$categoryName 메모리스트"
@@ -67,8 +70,7 @@ class ShowMemoListActivity : AppCompatActivity() {
         // 메모 수정 액티비티 종료 후
         val memoEditBack = ActivityResultContracts.StartActivityForResult()
         editMemoActivityLauncher = registerForActivityResult(memoEditBack) {
-            val editAdapter = activityShowMemoListBinding.ShowMemoRecycler.adapter as MemoRecyclerAdapter
-            editAdapter.notifyDataSetChanged()
+           activityShowMemoListBinding.ShowMemoRecycler.adapter?.notifyDataSetChanged()
         }
 
 //---------------------------------------------------------------------------------------------------------
@@ -87,8 +89,7 @@ class ShowMemoListActivity : AppCompatActivity() {
                     //Log.d("멋사"," 메모 추가 액티비티 종료 후 메모 리스트 확인 : ${memoList.toMutableList()}")
                 }
             }
-            val addAdapter = activityShowMemoListBinding.ShowMemoRecycler.adapter as MemoRecyclerAdapter
-            addAdapter.notifyDataSetChanged()
+            activityShowMemoListBinding.ShowMemoRecycler.adapter?.notifyDataSetChanged()
         }
 
     }
@@ -115,17 +116,17 @@ class ShowMemoListActivity : AppCompatActivity() {
 //---------------------------------------------------------------------------------------------------------
     // 메모의 제목과 내용을 보여주는 리사이클러 뷰
     inner class MemoRecyclerAdapter : RecyclerView.Adapter<MemoRecyclerAdapter.ViewHolderClass>() {
-        inner class ViewHolderClass(showMemoBinding: ActivityShowMemoBinding) :RecyclerView.ViewHolder(showMemoBinding.root){
+        inner class ViewHolderClass(memoitemBinding: MemoitemBinding) :RecyclerView.ViewHolder(memoitemBinding.root){
 
             var title : TextView
             var contents : TextView
 
             init{
-                title = showMemoBinding.textViewMemoTitle
-                contents = showMemoBinding.textViewMemoContents
+                title = memoitemBinding.textViewTitle
+                contents = memoitemBinding.textViewContents
 
                 // 메모 클릭 시 발생 이벤트
-                showMemoBinding.root.setOnClickListener {
+                memoitemBinding.root.setOnClickListener {
 
                     val showIntent = Intent(this@ShowMemoListActivity, ShowMemoActivity::class.java)
                     showIntent.putExtra("title", memoList[adapterPosition].title)
@@ -134,7 +135,7 @@ class ShowMemoListActivity : AppCompatActivity() {
 
                 }
 
-                showMemoBinding.root.setOnCreateContextMenuListener { menu, v, menuInfo ->
+                memoitemBinding.root.setOnCreateContextMenuListener { menu, v, menuInfo ->
 
                     menuInflater.inflate(R.menu.memo_edit_del,menu)
 
@@ -164,15 +165,15 @@ class ShowMemoListActivity : AppCompatActivity() {
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
-            val showMemoBinding = ActivityShowMemoBinding.inflate(layoutInflater)
-            val viewHolderClass = ViewHolderClass(showMemoBinding)
+            val memoitemBinding = MemoitemBinding.inflate(layoutInflater)
+            val viewHolderClass = ViewHolderClass(memoitemBinding)
 
             val params = RecyclerView.LayoutParams(
                 RecyclerView.LayoutParams.MATCH_PARENT,
                 RecyclerView.LayoutParams.WRAP_CONTENT
             )
 
-            showMemoBinding.root.layoutParams = params
+            memoitemBinding.root.layoutParams = params
 
             return viewHolderClass
         }

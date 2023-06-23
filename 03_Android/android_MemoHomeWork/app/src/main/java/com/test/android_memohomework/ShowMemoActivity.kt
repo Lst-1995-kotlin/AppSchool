@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.test.android_memohomework.databinding.ActivityShowMemoBinding
 
+
 class ShowMemoActivity : AppCompatActivity() {
 
     lateinit var showMemoBinding: ActivityShowMemoBinding
@@ -17,6 +18,10 @@ class ShowMemoActivity : AppCompatActivity() {
 
             textViewMemoTitle.text = intent.getStringExtra("title")
             textViewMemoContents.text = intent.getStringExtra("contents")
+
+            buttonBack.setOnClickListener {
+                finish()
+            }
 
         }
 

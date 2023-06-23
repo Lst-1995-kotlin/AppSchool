@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="메모 내용"
-                android:inputType="text"
+                android:inputType="text|textMultiLine"
                 android:nestedScrollingEnabled="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 

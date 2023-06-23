@@ -14,7 +14,6 @@ import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.test.android_memohomework.category_memo.Memo
-import com.test.android_memohomework.category_memo.TotalData
 import com.test.android_memohomework.category_memo.TotalData.Companion.categoryMap
 import com.test.android_memohomework.databinding.ActivityMainBinding
 import com.test.android_memohomework.databinding.CategorynameBinding
@@ -51,8 +50,7 @@ class MainActivity : AppCompatActivity() {
         // 카테고리 메모 확인 액티비티 종료된 후
         val showMemoListMain = ActivityResultContracts.StartActivityForResult()
         showMemoListActivityLauncher = registerForActivityResult(showMemoListMain){
-            val editAdapter = activityMainBinding.mainRecyclerView.adapter as MainRecyclerAdapter
-            editAdapter.notifyDataSetChanged()
+            activityMainBinding.mainRecyclerView.adapter?.notifyDataSetChanged()
         }
 
 //---------------------------------------------------------------------------------------------------------
@@ -76,8 +74,7 @@ class MainActivity : AppCompatActivity() {
 
                 categoryMap = newMap
 
-                val editAdapter = activityMainBinding.mainRecyclerView.adapter as MainRecyclerAdapter
-                editAdapter.notifyDataSetChanged()
+                activityMainBinding.mainRecyclerView.adapter?.notifyDataSetChanged()
 
             }
         }
@@ -91,8 +88,7 @@ class MainActivity : AppCompatActivity() {
                 val newCategory =  it.data!!.getStringExtra("addCategory")
                 categoryMap[newCategory!!] = ArrayList<Memo>()
 
-                val addAdapter = activityMainBinding.mainRecyclerView.adapter as MainRecyclerAdapter
-                addAdapter.notifyDataSetChanged()
+                activityMainBinding.mainRecyclerView.adapter?.notifyDataSetChanged()
             }
         }
     }
@@ -161,12 +157,12 @@ class MainActivity : AppCompatActivity() {
                     val categoryName = categoryMap.keys.toList()[adapterPosition]
                     showMemoIntent.putExtra("category",categoryName)
 
-                    showMemoIntent.putExtra("memoCount",categoryMap[categoryName]!!.size)
-
-                    for(i in 0 .. categoryMap[categoryName]!!.size-1){
-                        showMemoIntent.putExtra("title$i",categoryMap[categoryName]!![i].title)
-                        showMemoIntent.putExtra("contents$i",categoryMap[categoryName]!![i].contents)
-                    }
+//                    showMemoIntent.putExtra("memoCount",categoryMap[categoryName]!!.size)
+//
+//                    for(i in 0 .. categoryMap[categoryName]!!.size-1){
+//                        showMemoIntent.putExtra("title$i",categoryMap[categoryName]!![i].title)
+//                        showMemoIntent.putExtra("contents$i",categoryMap[categoryName]!![i].contents)
+//                    }
 
                     showMemoListActivityLauncher.launch(showMemoIntent)
 
