@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
 
+
         requestPermissions(permissionList, 0)
 
         addNotificationChannel(NOTIFICATION_CHANNEL1_ID, NOTIFICATION_CHANNEL1_NAME)
