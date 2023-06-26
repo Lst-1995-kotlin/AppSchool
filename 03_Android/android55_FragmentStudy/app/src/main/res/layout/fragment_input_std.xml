@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".InputStdFragment">
+
+    <EditText
+        android:id="@+id/editTextInputUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="이름"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextInputUserAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="나이"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editTextInputUserKorean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="국어점수"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/buttonInputSaveUserInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="저장하기" />
+</LinearLayout>
