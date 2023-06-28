@@ -47,13 +47,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        // 등록된 BR을 해제한다.
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            unregisterReceiver(a2)
-        }
-    }
+
 
     // Notification Channel을 등록하는 메서드
     // 첫 번째 : 코드에서 채널을 관리하기 위한 이름
