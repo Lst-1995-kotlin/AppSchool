@@ -3,6 +3,7 @@ package com.test.android56_exhomework.data
 enum class FragmentMainName(var str:String){
     FRAGMENT_MAIN("mainFragment"),
     FRAGMENT_INPUT("inputFragment"),
+    FRAGMENT_SHOW("showFragment")
 }
 
 enum class FragmentInputName(var str:String){

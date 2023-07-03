@@ -24,7 +24,7 @@ class SecondActivity : AppCompatActivity() {
             android.R.id.home -> {
                 // 현재 Activity를 종료한다.
                 finish()
-                
+
             }
         }
 

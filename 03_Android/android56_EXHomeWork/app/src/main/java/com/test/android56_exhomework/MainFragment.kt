@@ -31,8 +31,6 @@ class MainFragment : Fragment() {
         "전체 보기","야구부", "축구부", "수영부"
     )
 
-
-
     override fun onResume() {
         super.onResume()
         val rvAdapter = fragmentMainBinding.recyclerMain.adapter as RecyclerView.Adapter
@@ -44,7 +42,6 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
         fragmentMainBinding = FragmentMainBinding.inflate(inflater)
         mainActivity = activity as MainActivity
 
@@ -140,6 +137,14 @@ class MainFragment : Fragment() {
             var textViewStdName : TextView
             init{
                 textViewStdName = mainfrastdrowBinding.textViewStdName
+
+                mainfrastdrowBinding.root.setOnClickListener {
+                    mainActivity.selStdNum = mainActivity.stdList.indexOfFirst {
+                        it.name == mainActivity.selStdList[adapterPosition].name
+                    }
+                    mainActivity.replaceFragment(FragmentMainName.FRAGMENT_SHOW, true, true)
+                }
+
             }
         }
 

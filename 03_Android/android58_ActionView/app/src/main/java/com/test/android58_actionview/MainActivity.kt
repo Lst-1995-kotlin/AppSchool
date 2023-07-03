@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         // ActionView가 펼쳐지거나 접혔을 때...
         item1.setOnActionExpandListener(object : MenuItem.OnActionExpandListener{
             // 펼쳐 졌을 때
-            // true를 반환하면 펼쳐지고 false를 반환하면 펼쳐지짖 않는다.
+            // true를 반환하면 펼쳐지고 false를 반환하면 펼쳐지지 않는다.
             override fun onMenuItemActionExpand(item: MenuItem): Boolean {
                 activityMainBinding.textView.text = "펼쳐졌을 때"
                 return true

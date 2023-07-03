@@ -61,6 +61,9 @@ class MainActivity : AppCompatActivity() {
             FragmentMainName.FRAGMENT_INPUT ->{
                 newFragment = InputFragment()
             }
+            FragmentMainName.FRAGMENT_SHOW ->{
+                newFragment = ShowFragment()
+            }
         }
 
         if(newFragment != null) {
