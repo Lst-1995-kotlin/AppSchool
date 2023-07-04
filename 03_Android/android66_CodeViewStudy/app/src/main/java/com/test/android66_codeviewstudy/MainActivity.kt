@@ -23,10 +23,6 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
 
-        humenList.add(Humen("길동1",10,"없어"))
-        humenList.add(Humen("길동2",11,"없어2"))
-        humenList.add(Humen("길동3",12,"없어3"))
-
         activityMainBinding.run{
             replaceFragment(FragmentName.FRAGMENT_MAIN, false, false)
         }

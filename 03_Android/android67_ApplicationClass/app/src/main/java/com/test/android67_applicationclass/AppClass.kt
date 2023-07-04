@@ -1,0 +1,11 @@
+package com.test.android67_applicationclass
+
+import android.app.Application
+
+class AppClass: Application() {
+
+    var value = 0
+    var value2 = 0.0
+    lateinit var value3: String
+
+}
