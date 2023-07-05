@@ -8,12 +8,12 @@ class DAO {
 
         fun insertData(context: Context, data : Student){
             val sql = """insert into Student
-                |(name, age, korean)
-                |values(?,?,?)
+                |(timeKey, name, age, korean)
+                |values(?, ?, ?, ?)
             """.trimMargin()
 
             val arg = arrayOf(
-                data.name, data.age, data.korean
+                data.timeKey, data.name, data.age, data.korean
             )
 
             val sqliteDataBase = DBHelper(context)
@@ -22,8 +22,32 @@ class DAO {
 
         }
 
-        fun selectData(){
 
+        fun selectData(context: Context, timeKey: Long): Student {
+            val sql = "select * from Student where timeKey = $timeKey"
+            val dbHelper = DBHelper(context)
+            val cursor = dbHelper.writableDatabase.rawQuery(sql, null)
+
+            val colums = arrayOf("timeKey", "name", "age", "korean")
+            val positions = IntArray(colums.size)
+
+            cursor.moveToFirst()
+
+            for (i in 0..colums.size-1) {
+                positions[i] = cursor.getColumnIndex(colums[i])
+            }
+
+            val key = cursor.getLong(positions[0])
+            val name = cursor.getString(positions[1])
+            val age = cursor.getInt(positions[2])
+            val korean = cursor.getInt(positions[3])
+
+            dbHelper.close()
+
+            val selStd = Student(key, name, age, korean)
+
+
+            return selStd
         }
 
         fun selectAllData(context: Context) : MutableList<Student>{
@@ -32,18 +56,19 @@ class DAO {
             val sql = "select * from Student"
             val dbHelper = DBHelper(context)
             val cursor = dbHelper.writableDatabase.rawQuery(sql, null)
-            Log.d("멋사", "$cursor")
-            val colums = arrayOf("name", "age", "korean")
+
+            val colums = arrayOf("timeKey", "name", "age", "korean")
 
             while (cursor.moveToNext()){
                 val positions = IntArray(colums.size)
                 for(i in 0 .. colums.size-1){
                     positions[i] = cursor.getColumnIndex(colums[i])
                 }
-                val name = cursor.getString(positions[0])
-                val age = cursor.getInt(positions[1])
-                val korean = cursor.getInt(positions[2])
-                val newStd = Student(name, age, korean)
+                val timeKey = cursor.getLong(positions[0])
+                val name = cursor.getString(positions[1])
+                val age = cursor.getInt(positions[2])
+                val korean = cursor.getInt(positions[3])
+                val newStd = Student(timeKey,name, age, korean)
                 stdList.add(newStd)
             }
 
@@ -52,8 +77,14 @@ class DAO {
             return stdList
         }
 
-        fun removeData(){
-
+        fun removeData(context: Context, delKey : Long){
+            val sql = "delete from Student where timeKey = ?"
+            val arg = arrayOf(
+                delKey
+            )
+            val dbHelper = DBHelper(context)
+            dbHelper.writableDatabase.execSQL(sql, arg)
+            dbHelper.close()
         }
 
     }

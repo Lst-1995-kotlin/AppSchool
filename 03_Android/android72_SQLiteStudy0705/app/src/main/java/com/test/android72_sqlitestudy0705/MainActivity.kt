@@ -7,13 +7,14 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.test.android72_sqlitestudy0705.databinding.ActivityMainBinding
 
-data class Student(val name: String, val age: Int, val korean: Int)
+data class Student(val timeKey: Long, val name: String, val age: Int, val korean: Int)
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var activityMainBinding : ActivityMainBinding
 
     var stdList = mutableListOf<Student>()
+    var selectKey = 0L
 
     companion object{
         val FRAGMENT_MAIN = "fragmentMain"

@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class DBHelper(context: Context) : SQLiteOpenHelper(context, "Std.db", null, 1) {
     override fun onCreate(db: SQLiteDatabase?) {
         val sql = """create table Student
-            |(idx integer primary key autoincrement,
+            |(timeKey long primary key not Null,
             | name text not Null,
             | age integer not Null,
             | korean integer not Null)

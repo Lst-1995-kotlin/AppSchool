@@ -36,10 +36,11 @@ class AddFragment : Fragment() {
 
             buttonAddSave.run{
                 setOnClickListener {
+                    val timeKey = System.currentTimeMillis()
                     val name = editTextAddName.text.toString()
                     val age = editTextAddAge.text.toString().toInt()
                     val korean = editTextAddKorean.text.toString().toInt()
-                    val newStd = Student(name, age, korean)
+                    val newStd = Student(timeKey, name, age, korean)
                     DAO.insertData(mainActivity, newStd)
                     mainActivity.removeFragment(MainActivity.FRAGMENT_ADD)
                 }
