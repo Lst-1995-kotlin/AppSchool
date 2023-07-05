@@ -11,6 +11,7 @@ import java.io.DataInputStream
 import java.io.DataOutputStream
 import java.io.FileInputStream
 import java.io.FileOutputStream
+import java.io.ObjectInputStream
 
 class MainActivity : AppCompatActivity() {
     lateinit var activityMainBinding: ActivityMainBinding
@@ -136,6 +137,8 @@ class MainActivity : AppCompatActivity() {
                 // null을 넣으면 files까지의 경로가 된다.
                 val filePath = getExternalFilesDir(null).toString()
 
+
+
                 val fos = FileOutputStream("${filePath}/data2.dat")
                 val dos = DataOutputStream(fos)
 
@@ -149,10 +152,10 @@ class MainActivity : AppCompatActivity() {
                 fos.close()
 
                 textView.text = "외부 저장소 앱 데이터 폴더에 저장"
+                textView.text = "$filePath"
             }
 
             button4.setOnClickListener {
-                // type 안에는 외부저장소에 사용할 폴더명.
                 val filePath = getExternalFilesDir(null).toString()
                 val fis = FileInputStream("${filePath}/data2.dat")
                 val dis = DataInputStream(fis)
