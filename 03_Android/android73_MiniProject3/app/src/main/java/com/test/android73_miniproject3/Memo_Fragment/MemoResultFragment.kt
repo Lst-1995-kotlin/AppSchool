@@ -28,12 +28,7 @@ class MemoResultFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         fragmentMemoResultBinding.run {
-            textViewResultTitle.text = mainActivity.selectMemo.memoTitle
 
-            val dataFormat = SimpleDateFormat("yyyy-MM-dd")
-            val updateTime = dataFormat.format(mainActivity.selectMemo.updateTime)
-            textViewResultDate.text = updateTime
-            textViewResultContents.text = mainActivity.selectMemo.memoContents
         }
     }
 
@@ -47,6 +42,12 @@ class MemoResultFragment : Fragment() {
         mainActivity = activity as MainActivity
 
         fragmentMemoResultBinding.run{
+            textViewResultTitle.text = mainActivity.selectMemo.memoTitle
+
+            val dataFormat = SimpleDateFormat("yyyy-MM-dd")
+            val updateTime = dataFormat.format(mainActivity.selectMemo.updateTime)
+            textViewResultDate.text = updateTime
+            textViewResultContents.text = mainActivity.selectMemo.memoContents
 
             toolbarMemoResult.run{
                 inflateMenu(R.menu.memo_edit_menu)

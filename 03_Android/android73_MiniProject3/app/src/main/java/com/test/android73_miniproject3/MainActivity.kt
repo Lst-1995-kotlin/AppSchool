@@ -78,7 +78,18 @@ class MainActivity : AppCompatActivity() {
 
             if (animate == true) {
                 // 애니메이션을 설정한다.
-                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                // fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                fragmentTransaction.setCustomAnimations(
+                    // A -> B로 이동을 가정한다.
+                    // B가 나타날 때의 애니메이션
+                    R.anim.slide_in,
+                    // A가 사라질 때의 애니메이션
+                    R.anim.fade_out,
+                    // A가 나타날 때의 애니메이션
+                    R.anim.fade_in,
+                    // B가 사라질 때의 애니메이션
+                    R.anim.slide_out
+                )
             }
 
             if (addToBackStack == true) {

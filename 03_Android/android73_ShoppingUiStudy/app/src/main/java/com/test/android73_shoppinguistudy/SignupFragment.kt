@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
 import com.test.android73_shoppinguistudy.databinding.FragmentSignupBinding
 
 class SignupFragment : Fragment() {
@@ -28,6 +29,7 @@ class SignupFragment : Fragment() {
                     mainActivity.removeFragment((MainActivity.SIGNUPFRAGMENT))
                     val intent = Intent(mainActivity, MainActivity2::class.java)
                     startActivity(intent)
+                    ActivityCompat.finishAffinity(mainActivity)
                     false
                 }
             }

@@ -7,4 +7,9 @@
         android:icon="@android:drawable/ic_menu_add"
         android:title="메모추가"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/memoDel"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="Item"
+        app:showAsAction="always" />
 </menu>

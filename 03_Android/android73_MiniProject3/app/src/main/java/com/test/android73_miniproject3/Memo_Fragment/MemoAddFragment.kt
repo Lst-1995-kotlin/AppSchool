@@ -1,15 +1,18 @@
 package com.test.android73_miniproject3.Memo_Fragment
 
+import android.content.Context
 import android.graphics.BlendMode
 import android.graphics.BlendModeColorFilter
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.os.Build
 import android.os.Bundle
+import android.os.SystemClock
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import com.test.android73_miniproject3.DATA.Memo
@@ -18,6 +21,7 @@ import com.test.android73_miniproject3.DB.DAOMemo
 import com.test.android73_miniproject3.MainActivity
 import com.test.android73_miniproject3.R
 import com.test.android73_miniproject3.databinding.FragmentMemoAddBinding
+import kotlin.concurrent.thread
 
 class MemoAddFragment : Fragment() {
 
@@ -34,6 +38,15 @@ class MemoAddFragment : Fragment() {
         mainActivity = activity as MainActivity
 
         fragmentMemoAddBinding.run{
+
+            editTextMemoTitle.requestFocus()
+
+            thread {
+                SystemClock.sleep(200)
+                val imm = mainActivity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.showSoftInput(editTextMemoTitle, 0)
+            }
+
             toolbarMemoAdd.run{
                 inflateMenu(R.menu.memo_save_menu)
                 title = "메모 추가"
@@ -64,6 +77,14 @@ class MemoAddFragment : Fragment() {
                     mainActivity.memoList = DAOMemo.selectAll(mainActivity, category)
                     mainActivity.categoryList = DAOCategory.selectAll(mainActivity)
                     mainActivity.removeFragment(MainActivity.FRAGMENT_MEMO_ADD)
+
+                    thread {
+                        SystemClock.sleep(200)
+                        if(mainActivity.currentFocus != null){
+                            val imm = mainActivity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                            imm.hideSoftInputFromWindow(mainActivity.currentFocus?.windowToken, 0)
+                        }
+                    }
 
                     false
                 }

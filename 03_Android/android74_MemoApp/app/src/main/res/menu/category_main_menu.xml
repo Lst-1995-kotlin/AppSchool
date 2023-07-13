@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/memoEditMenu"
+        android:icon="?attr/actionModeCutDrawable"
+        android:title="Item"
+        android:visible="false"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/categoryMainItem1"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Item"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/memoDelSaveMenu"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="Item"
+        android:visible="false"
+        app:showAsAction="always" />
+</menu>

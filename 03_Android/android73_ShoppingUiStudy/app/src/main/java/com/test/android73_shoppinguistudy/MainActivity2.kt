@@ -24,6 +24,8 @@ class MainActivity2 : AppCompatActivity() {
         activityMain2Binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(activityMain2Binding.root)
 
+        onBackPressed()
+
         setSupportActionBar(activityMain2Binding.appBarMain.toolbar)
 
         val drawerLayout: DrawerLayout = activityMain2Binding.drawerLayout

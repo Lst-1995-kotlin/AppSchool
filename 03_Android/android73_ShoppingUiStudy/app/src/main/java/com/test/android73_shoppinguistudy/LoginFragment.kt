@@ -17,7 +17,7 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
 
         fragmentLoginBinding = FragmentLoginBinding.inflate(inflater)
@@ -28,6 +28,7 @@ class LoginFragment : Fragment() {
                 setOnEditorActionListener { v, actionId, event ->
                     mainActivity.removeFragment(MainActivity.LOGINFRAGMENT)
                     val intent = Intent(mainActivity, MainActivity2::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK and Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                     false
                 }
