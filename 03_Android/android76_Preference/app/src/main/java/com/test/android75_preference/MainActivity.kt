@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
                     val set1 = mutableSetOf<String>()
                     set1.add("문자열1")
                     set1.add("문자열2")
-                    set1.add("문자열3")
+                    set1.add("문자열1")
                     editor.putStringSet("data6", set1)
 
                     // 설정한 값을 저장한다.
