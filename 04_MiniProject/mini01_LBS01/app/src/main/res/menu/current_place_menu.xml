@@ -3,8 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/option_get_place"
+        android:id="@+id/get_now_position"
         android:icon="@android:drawable/ic_menu_mylocation"
+        android:title="Item"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/selectPlace"
+        android:icon="@drawable/quantum_ic_search_grey600_24"
         android:title="Item"
         app:showAsAction="always" />
 </menu>
