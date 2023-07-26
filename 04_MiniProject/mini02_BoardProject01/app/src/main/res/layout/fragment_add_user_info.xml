@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddUserInfoFragment" >
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/AddInfomaterialToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/Theme.Mini02.Toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/AddUserInfoNickNameInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="닉네임"
+                android:transitionGroup="true"
+                app:endIconMode="clear_text"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Large"
+                app:startIconDrawable="@drawable/badge_24px">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/AddUserInfoNickNameInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text|textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/AddUserInfoAgeInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:hint="나이"
+                android:transitionGroup="true"
+                app:startIconDrawable="@drawable/event_available_24px">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/AddUserInfoAgeInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/hobbyCheck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:checked="false"
+                android:duplicateParentState="true"
+                android:text="취미 선택하기"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:checkedState="unchecked" />
+
+            <LinearLayout
+                android:id="@+id/checkbox_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkbox_child_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="안드로이드"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkbox_child_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="IOS"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkbox_child_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="하이브리드"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonJoinSucces"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="가입 완료"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

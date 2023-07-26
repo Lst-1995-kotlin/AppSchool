@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".JoinFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/joinMaterialToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/Theme.Mini02.Toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutJoinUserId"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="아이디"
+                android:transitionGroup="true"
+                app:startIconDrawable="@drawable/person_add_24px">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputTextJoinUserId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text|textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutJoinUserPw"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:hint="패스워드"
+                android:transitionGroup="true"
+                app:endIconMode="password_toggle"
+                app:startIconDrawable="@drawable/pin_24px">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputTextJoinUserPw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text|textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutJoinUserPwCheck"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:hint="패스워드 확인"
+                android:transitionGroup="true"
+                app:endIconMode="password_toggle"
+                app:startIconDrawable="@drawable/pin_24px">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputTextJoinUserPwCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text|textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/buttonGoAddInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="다음"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
