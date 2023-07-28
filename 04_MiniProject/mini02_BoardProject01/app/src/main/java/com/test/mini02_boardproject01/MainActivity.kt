@@ -27,11 +27,14 @@ class MainActivity : AppCompatActivity() {
 
     var nowUserInfo: UserInfo? = null
 
+    lateinit var tempList : MutableList<String>
+
     companion object{
         val LOGIN_FRAGMENT = "LoginFragment"
         val JOIN_FRAGMENT = "JoinFragment"
         val ADD_USER_INFO_FRAGMENT = "AddUserInfoFragment"
         val MAIN_BOARD_FRAGMENT = "MainBoardFragment"
+        val SEARCH_VIEW_FRAGMENT = "SearchFragment"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +47,11 @@ class MainActivity : AppCompatActivity() {
 
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
+
+        tempList = mutableListOf()
+        for(i in 1 .. 100){
+            tempList.add("${i}번째 아이템")
+        }
 
         replaceFragment(LOGIN_FRAGMENT, false, null)
 
@@ -65,6 +73,7 @@ class MainActivity : AppCompatActivity() {
             JOIN_FRAGMENT -> JoinFragment()
             ADD_USER_INFO_FRAGMENT -> AddUserInfoFragment()
             MAIN_BOARD_FRAGMENT -> MainBoardFragment()
+            SEARCH_VIEW_FRAGMENT -> SerachFragment()
             else -> Fragment()
         }
 

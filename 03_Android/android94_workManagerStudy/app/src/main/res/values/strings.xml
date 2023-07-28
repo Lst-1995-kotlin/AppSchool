@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">android94_workManagerStudy</string>
+    <string name="ip">"172.30.1.85"</string>
+    <string name="port">44444</string>
+</resources>

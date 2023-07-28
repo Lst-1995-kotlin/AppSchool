@@ -2,69 +2,43 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawerLayout"
+    android:id="@+id/drawerLayoutBoardMain"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainBoardFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/CoordinatorLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/coordinatorLayoutBoardMain">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <androidx.core.widget.NestedScrollView
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbarBoardMain"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_behavior="@string/searchbar_scrolling_view_behavior">
-                <!-- Screen content goes here. -->
-            </androidx.core.widget.NestedScrollView>
-
-            <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/mainBoardBarLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.search.SearchBar
-                    android:id="@+id/mainBoardToolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?attr/colorPrimary"
-                    android:minHeight="?attr/actionBarSize"
-                    android:theme="@style/Theme.Mini02.Toolbar"
-                    app:navigationIcon="@drawable/edit_24px" />
-            </com.google.android.material.appbar.AppBarLayout>
-
-            <com.google.android.material.search.SearchView
-                android:id="@+id/searchView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                app:layout_anchor="@id/mainBoardToolbar"
-                app:searchIcon="@drawable/edit_24px">
-                <!-- Search suggestions/results go here (ScrollView, RecyclerView, etc.). -->
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/searchViewRyc"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </com.google.android.material.search.SearchView>
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/Theme.Mini02.Toolbar" />
 
             <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fragmentByContainerView"
+                android:id="@+id/boardMainContainer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-        </LinearLayout>
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/mainBoardNavView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            app:menu="@menu/mainboardmenu" />
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationViewBoardMain"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/mainboardmenu" />
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

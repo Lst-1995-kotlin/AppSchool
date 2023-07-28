@@ -50,7 +50,7 @@ class LoginFragment : Fragment() {
 //                }
 
                 mainActivity.removeFragment(MainActivity.LOGIN_FRAGMENT)
-                mainActivity.replaceFragment(MainActivity.MAIN_BOARD_FRAGMENT, true, null)
+                mainActivity.replaceFragment(MainActivity.MAIN_BOARD_FRAGMENT, false, null)
             }
         }
 

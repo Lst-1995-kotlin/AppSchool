@@ -25,16 +25,22 @@
             <com.google.android.material.search.SearchBar
                 android:id="@+id/search_bar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:iconifiedByDefault="false"
+                app:queryHint="검색어 입력"
+                />
+
+            <com.google.android.material.search.SearchView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!-- Search suggestions/results go here (ScrollView, RecyclerView, etc.). -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/searchfragmentRyc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.search.SearchView>
         </com.google.android.material.appbar.AppBarLayout>
 
-        <com.google.android.material.search.SearchView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_anchor="@+id/nestedScrollView"
-            app:layout_anchorGravity="center">
-            <!-- Search suggestions/results go here (ScrollView, RecyclerView, etc.). -->
-        </com.google.android.material.search.SearchView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
