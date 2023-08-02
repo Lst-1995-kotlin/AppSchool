@@ -1,19 +1,18 @@
 package com.test.mini02_boardproject01
 
-import android.os.Build
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.test.mini02_boardproject01.databinding.FragmentPostReadBinding
-import kotlinx.coroutines.Dispatchers.Main
 
 
 class PostReadFragment : Fragment() {
 
-    lateinit var mainFragment: MainBoardFragment
     lateinit var fragmentPostReadBinding: FragmentPostReadBinding
+    lateinit var mainActivity: MainActivity
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,29 +20,52 @@ class PostReadFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
-            mainFragment = arguments?.getParcelable("mainFragment", MainBoardFragment::class.java)!!
-        } else{
-            mainFragment = arguments?.getParcelable("mainFragment")!!
-        }
-
-        fragmentPostReadBinding = FragmentPostReadBinding.inflate(layoutInflater)
+        fragmentPostReadBinding = FragmentPostReadBinding.inflate(inflater)
+        mainActivity = activity as MainActivity
 
         fragmentPostReadBinding.run{
-            postReadTitleTextView.text = arguments?.getString("title")
-            postReadContentsTextView.text = arguments?.getString("contents")
-
-            postReadMaterialToolbar.run{
-                setNavigationIcon(R.drawable.exit_to_app_24px)
+            toolbarPostRead.run{
+                title = "글읽기"
+                setNavigationIcon(androidx.appcompat.R.drawable.abc_ic_ab_back_material)
                 setNavigationOnClickListener {
-                    mainFragment.removeFragment(MainBoardFragment.POST_READ_FRAGMENT)
+                    mainActivity.removeFragment(MainActivity.POST_WRITE_FRAGMENT)
+                    mainActivity.removeFragment(MainActivity.POST_READ_FRAGMENT)
                 }
+                inflateMenu(R.menu.menu_post_read)
+
+                setOnMenuItemClickListener {
+
+                    when(it.itemId){
+                        R.id.item_post_read_modify -> {
+//                            if(textInputEditTextPostReadSubject.isEnabled == false) {
+//                                textInputEditTextPostReadSubject.isEnabled = true
+//                                textInputEditTextPostReadText.isEnabled = true
+//                            } else {
+//                                textInputEditTextPostReadSubject.isEnabled = false
+//                                textInputEditTextPostReadText.isEnabled = false
+//                            }
+                            mainActivity.replaceFragment(MainActivity.POST_MODIFY_FRAGMENT, true, null)
+                        }
+                        R.id.item_post_read_delete -> {
+                            mainActivity.removeFragment(MainActivity.POST_WRITE_FRAGMENT)
+                            mainActivity.removeFragment(MainActivity.POST_READ_FRAGMENT)
+                        }
+                    }
+
+                    true
+                }
+            }
+
+            textInputEditTextPostReadSubject.run{
+                setTextColor(Color.BLACK)
+            }
+
+            textInputEditTextPostReadText.run{
+                setTextColor(Color.BLACK)
             }
 
         }
 
         return fragmentPostReadBinding.root
     }
-
-
 }

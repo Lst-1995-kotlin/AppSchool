@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                 // 회전 행렬을 적용하여 회전된 이미지를 생성한다.
                 // 원본 이미지, 원본이미지에서의 X좌표, 원본 이미지에서의 Y좌표, 원본 이미지에서의 가로길이.
                 // 원본 이미지에서의 세로길이, 변환행렬, 필터정보
-                // 원본 이미지넹서 지정된 x,y 좌표를 찍고 지정된 가로 세로 길이만큼의 이미지 데이터를 가져와
+                // 원본 이미지에서 지정된 x,y 좌표를 찍고 지정된 가로 세로 길이만큼의 이미지 데이터를 가져와
                 // 변환 행렬을 적용하여 이미지를 변환한다.
                 val bitmap3 = Bitmap.createBitmap(bitmap2, 0, 0, bitmap2.width, bitmap2.height, matrix, false)
 

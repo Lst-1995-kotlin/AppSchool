@@ -2,9 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Mini02_BoardProject02" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-
-        <!-- 모든 UI 요소의 기본 색상-->
+        <!-- 모든 UI 요소의 기본 색상 -->
         <item name="colorPrimary">@color/material_dynamic_primary40</item>
         <!-- 상단 상태바 색상 -->
         <item name="colorPrimaryDark">@color/material_dynamic_tertiary99</item>
@@ -23,10 +21,12 @@
     <!-- Splash Screen -->
     <style name="AppTheme.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/black</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/icon</item>
+        <!--
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/app_icon</item>
+        -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/aaa</item>
         <item name="windowSplashScreenAnimationDuration">1000</item>
         <item name="postSplashScreenTheme">@style/Theme.Mini02_BoardProject02</item>
     </style>
-
 
 </resources>

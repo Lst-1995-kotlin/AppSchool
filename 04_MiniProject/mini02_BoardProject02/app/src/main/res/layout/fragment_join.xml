@@ -56,7 +56,7 @@
                     android:id="@+id/textInputEditTextJoinUserPw"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text|textPersonName"
+                    android:inputType="text|textPassword"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,23 +65,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:hint="비밀번호 확인"
+                android:hint="비밀번호확인"
                 android:transitionGroup="true"
                 app:endIconMode="password_toggle"
-                app:startIconDrawable="@drawable/lock_24px"
-                tools:transitionGroup="true">
+                app:startIconDrawable="@drawable/lock_24px">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/textInputEditTextJoinUserPw2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text|textPersonName"
+                    android:inputType="text|textPassword"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/buttonJoinNext"
-                style="@style/Widget.Material3.Button.IconButton.Outlined"
+                style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

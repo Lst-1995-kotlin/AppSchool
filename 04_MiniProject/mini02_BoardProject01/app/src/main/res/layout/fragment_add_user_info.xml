@@ -8,7 +8,7 @@
     tools:context=".AddUserInfoFragment" >
 
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/AddInfomaterialToolbar"
+        android:id="@+id/toolbarAddUserInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -25,90 +25,120 @@
             android:orientation="vertical"
             android:padding="10dp">
 
+
+
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/AddUserInfoNickNameInputLayout"
+                android:id="@+id/textInputLayoutAddUserInfoNickName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="닉네임"
                 android:transitionGroup="true"
                 app:endIconMode="clear_text"
-                app:hintTextAppearance="@style/TextAppearance.AppCompat.Large"
-                app:startIconDrawable="@drawable/badge_24px">
+                app:startIconDrawable="@drawable/account_box_24px">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/AddUserInfoNickNameInputText"
+                    android:id="@+id/textInputEditTextAddUserInfoNickName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text|textPersonName" />
+                    android:inputType="text|textPersonName"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/AddUserInfoAgeInputLayout"
+                android:id="@+id/textInputLayoutAddUserInfoAge"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:hint="나이"
                 android:transitionGroup="true"
-                app:startIconDrawable="@drawable/event_available_24px">
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/face_6_24px">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/AddUserInfoAgeInputText"
+                    android:id="@+id/textInputEditTextAddUserInfoAge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/hobbyCheck"
+                android:id="@+id/materialCheckBoxAddUserInfoAll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:checked="false"
-                android:duplicateParentState="true"
-                android:text="취미 선택하기"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                app:checkedState="unchecked" />
+                android:text="취미"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <LinearLayout
-                android:id="@+id/checkbox_container"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
+                android:layout_height="match_parent"
+                android:layout_marginStart="50dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:id="@+id/materialCheckBoxGroupUserInfo1">
 
                 <com.google.android.material.checkbox.MaterialCheckBox
-                    android:id="@+id/checkbox_child_1"
+                    android:id="@+id/materialCheckBoxAddUserInfoHobby1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="안드로이드"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:layout_weight="1"
+                    android:text="게임" />
 
                 <com.google.android.material.checkbox.MaterialCheckBox
-                    android:id="@+id/checkbox_child_2"
+                    android:id="@+id/materialCheckBoxAddUserInfoHobby2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="IOS"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:layout_weight="1"
+                    android:text="독서" />
 
                 <com.google.android.material.checkbox.MaterialCheckBox
-                    android:id="@+id/checkbox_child_3"
+                    android:id="@+id/materialCheckBoxAddUserInfoHobby3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="하이브리드"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:layout_weight="1"
+                    android:text="요리" />
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="50dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:id="@+id/materialCheckBoxGroupUserInfo2">
 
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/materialCheckBoxAddUserInfoHobby4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="낚시" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/materialCheckBoxAddUserInfoHobby5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="영화감상" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/materialCheckBoxAddUserInfoHobby6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="음악감상" />
             </LinearLayout>
 
             <Button
-                android:id="@+id/buttonJoinSucces"
+                android:id="@+id/buttonAddUserInfoSubmit"
+                style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="가입 완료"
+                android:text="가입완료"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

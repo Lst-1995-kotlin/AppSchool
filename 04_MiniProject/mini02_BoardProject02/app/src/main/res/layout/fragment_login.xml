@@ -43,7 +43,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayoytLoginUserPw"
+                android:id="@+id/textInputLayoutLoginUserPw"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
@@ -69,7 +69,6 @@
                 android:text="로그인"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-
             <com.google.android.material.divider.MaterialDivider
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
@@ -85,7 +84,7 @@
                 android:text="회원가입"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>

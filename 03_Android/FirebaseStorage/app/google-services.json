@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "848192389433",
+    "project_id": "fir-storagetest-f450f",
+    "storage_bucket": "fir-storagetest-f450f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:848192389433:android:4d32a433289a7028bbe8e8",
+        "android_client_info": {
+          "package_name": "com.test.firebasestorage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "848192389433-befk11b435o6vrt6eqk0s9cm6778p53a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi6d28jmc5Z45VSBFzRLm3fUVipb3Ahsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "848192389433-befk11b435o6vrt6eqk0s9cm6778p53a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

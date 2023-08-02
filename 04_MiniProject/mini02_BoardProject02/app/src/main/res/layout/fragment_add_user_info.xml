@@ -23,7 +23,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10dp" >
+            android:padding="10dp">
+
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutAddUserInfoNickName"
@@ -58,7 +60,6 @@
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.checkbox.MaterialCheckBox
@@ -70,12 +71,12 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <LinearLayout
-                android:id="@+id/materialCheckBoxGroupUserInfo1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="50dp"
+                android:orientation="horizontal"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:id="@+id/materialCheckBoxGroupUserInfo1">
 
                 <com.google.android.material.checkbox.MaterialCheckBox
                     android:id="@+id/materialCheckBoxAddUserInfoHobby1"
@@ -100,12 +101,12 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/materialCheckBoxGroupUserInfo2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="50dp"
+                android:orientation="horizontal"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:id="@+id/materialCheckBoxGroupUserInfo2">
 
                 <com.google.android.material.checkbox.MaterialCheckBox
                     android:id="@+id/materialCheckBoxAddUserInfoHobby4"
@@ -126,7 +127,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="음악강삼" />
+                    android:text="음악감상" />
             </LinearLayout>
 
             <Button

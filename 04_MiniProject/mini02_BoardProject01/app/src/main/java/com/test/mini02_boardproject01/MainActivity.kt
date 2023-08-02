@@ -1,124 +1,98 @@
 package com.test.mini02_boardproject01
 
+import android.Manifest
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
 import android.view.View
 import android.view.animation.AnticipateInterpolator
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.transition.MaterialSharedAxis
-import com.test.mini02_boardproject01.DATA.UserInfo
 import com.test.mini02_boardproject01.databinding.ActivityMainBinding
 
-// 내가 작성하는거
+
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var activityMainBinding: ActivityMainBinding
 
-    var newFragment: Fragment? = null
-    var oldFragment: Fragment? = null
+    var newFragment:Fragment? = null
+    var oldFragment:Fragment? = null
 
-    var nowUserInfo: UserInfo? = null
+    var joinUserId: String? = null
+    var joinUserPw: String? = null
 
-    lateinit var tempList : MutableList<String>
+    lateinit var nowLoginUser: UserInfo
 
     companion object{
         val LOGIN_FRAGMENT = "LoginFragment"
         val JOIN_FRAGMENT = "JoinFragment"
         val ADD_USER_INFO_FRAGMENT = "AddUserInfoFragment"
-        val MAIN_BOARD_FRAGMENT = "MainBoardFragment"
-        val SEARCH_VIEW_FRAGMENT = "SearchFragment"
+        val BOARD_MAIN_FRAGMENT = "BoardMainFragment"
+        val POST_WRITE_FRAGMENT = "PostWriteFragment"
+        val POST_READ_FRAGMENT = "PostReadFragment"
+        val POST_MODIFY_FRAGMENT = "PostModifyFragment"
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    val permissionList = arrayOf(
+        Manifest.permission.INTERNET,
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.ACCESS_MEDIA_LOCATION
+    )
 
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val splashScreen = installSplashScreen()
-        //splashScreenCustomizing(splashScreen)
-        //SystemClock.sleep(3000)
+        // splashScreenCustomizing(splashScreen)
+
+        // SystemClock.sleep(3000)
 
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
 
-        tempList = mutableListOf()
-        for(i in 1 .. 100){
-            tempList.add("${i}번째 아이템")
-        }
+        requestPermissions(permissionList, 0)
 
         replaceFragment(LOGIN_FRAGMENT, false, null)
-
     }
 
-    // 지정한 Fragment를 보여주는 메서드
-    fun replaceFragment(name:String, addToBackStack:Boolean, bundle:Bundle?){
-        // Fragment 교체 상태로 설정한다.
-        val fragmentTransaction = supportFragmentManager.beginTransaction()
-
-        // newFragment에 Fragment가 들어있으면 oldFragment에 넣어준다.
-        if(newFragment != null){
-            oldFragment = newFragment
+    fun inputCheck(inputEditText: TextInputEditText, menuName: String):Boolean{
+        if(inputEditText.text.isNullOrBlank()){
+            val builder = MaterialAlertDialogBuilder(this@MainActivity)
+            builder.setTitle("입력 오류")
+            builder.setMessage("$menuName 이(가) 입력되지 않았습니다..")
+            builder.setNegativeButton("확인",null)
+            builder.show()
+            return false
         }
-
-        // 새로운 Fragment를 담을 변수
-        newFragment = when(name){
-            LOGIN_FRAGMENT -> LoginFragment()
-            JOIN_FRAGMENT -> JoinFragment()
-            ADD_USER_INFO_FRAGMENT -> AddUserInfoFragment()
-            MAIN_BOARD_FRAGMENT -> MainBoardFragment()
-            SEARCH_VIEW_FRAGMENT -> SerachFragment()
-            else -> Fragment()
-        }
-
-        newFragment?.arguments = bundle
-
-        if(newFragment != null) {
-
-            // 애니메이션 설정
-            if(oldFragment != null){
-                oldFragment?.exitTransition = MaterialSharedAxis(MaterialSharedAxis.X, true)
-                oldFragment?.reenterTransition = MaterialSharedAxis(MaterialSharedAxis.X, false)
-                oldFragment?.enterTransition = null
-                oldFragment?.returnTransition = null
-            }
-
-            newFragment?.exitTransition = null
-            newFragment?.reenterTransition = null
-            newFragment?.enterTransition = MaterialSharedAxis(MaterialSharedAxis.X, true)
-            newFragment?.returnTransition = MaterialSharedAxis(MaterialSharedAxis.X, false)
-
-
-            // Fragment를 교채한다.
-            fragmentTransaction.replace(R.id.mainContainer, newFragment!!)
-
-            if (addToBackStack == true) {
-                // Fragment를 Backstack에 넣어 이전으로 돌아가는 기능이 동작할 수 있도록 한다.
-                fragmentTransaction.addToBackStack(name)
-            }
-
-            // 교체 명령이 동작하도록 한다.
-            fragmentTransaction.commit()
-        }
+        return true
     }
 
-    // Fragment를 BackStack에서 제거한다.
-    fun removeFragment(name:String){
-        supportFragmentManager.popBackStack(name, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+    fun equalCheck(inputEditText: TextInputEditText, inputEditText2: TextInputEditText):Boolean{
+        if(inputEditText.text.toString() != inputEditText2.text.toString()){
+            val builder = MaterialAlertDialogBuilder(this@MainActivity)
+            builder.setTitle("입력 오류")
+            builder.setMessage("비밀번호와 확인비밀번호가 다릅니다..")
+            builder.setNegativeButton("확인",null)
+            builder.show()
+            return false
+        }
+        return true
     }
 
-
-
-
+    // SplashScreen 커스터마이징
     fun splashScreenCustomizing(splashScreen: SplashScreen){
         // SplashScreen이 사라질 때 동작하는 리스너를 설정한다.
-        splashScreen.setOnExitAnimationListener {
+        splashScreen.setOnExitAnimationListener{
             // 가로 비율 애니메이션
             val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 1f, 2f, 1f, 0f)
             // 세로 비율 애니메이션
@@ -143,11 +117,78 @@ class MainActivity : AppCompatActivity() {
                     it.remove()
                 }
             })
-
+            
             // 애니메이션 가동
             objectAnimator.start()
-
         }
     }
 
+    // 지정한 Fragment를 보여주는 메서드
+    fun replaceFragment(name:String, addToBackStack:Boolean, bundle:Bundle?){
+
+        SystemClock.sleep(200)
+
+        // Fragment 교체 상태로 설정한다.
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+
+        // newFragment 에 Fragment가 들어있으면 oldFragment에 넣어준다.
+        if(newFragment != null){
+            oldFragment = newFragment
+        }
+
+        // 새로운 Fragment를 담을 변수
+        newFragment = when(name){
+            LOGIN_FRAGMENT -> LoginFragment()
+            JOIN_FRAGMENT -> JoinFragment()
+            ADD_USER_INFO_FRAGMENT -> AddUserInfoFragment()
+            BOARD_MAIN_FRAGMENT -> BoardMainFragment()
+            POST_WRITE_FRAGMENT -> PostWriteFragment()
+            POST_READ_FRAGMENT -> PostReadFragment()
+            POST_MODIFY_FRAGMENT -> PostModifyFragment()
+            else -> Fragment()
+        }
+
+        newFragment?.arguments = bundle
+
+        if(newFragment != null) {
+
+            // oldFragment -> newFragment로 이동
+            // oldFramgent : exit
+            // newFragment : enter
+
+            // oldFragment <- newFragment 로 되돌아가기
+            // oldFragment : reenter
+            // newFragment : return
+
+            // 애니메이션 설정
+            if(oldFragment != null){
+                oldFragment?.exitTransition = MaterialSharedAxis(MaterialSharedAxis.X, true)
+                oldFragment?.reenterTransition = MaterialSharedAxis(MaterialSharedAxis.X, false)
+                oldFragment?.enterTransition = null
+                oldFragment?.returnTransition = null
+            }
+
+            newFragment?.exitTransition = null
+            newFragment?.reenterTransition = null
+            newFragment?.enterTransition = MaterialSharedAxis(MaterialSharedAxis.X, true)
+            newFragment?.returnTransition = MaterialSharedAxis(MaterialSharedAxis.X, false)
+
+            // Fragment를 교채한다.
+            fragmentTransaction.replace(R.id.mainContainer, newFragment!!)
+
+            if (addToBackStack == true) {
+                // Fragment를 Backstack에 넣어 이전으로 돌아가는 기능이 동작할 수 있도록 한다.
+                fragmentTransaction.addToBackStack(name)
+            }
+
+            // 교체 명령이 동작하도록 한다.
+            fragmentTransaction.commit()
+        }
+    }
+
+    // Fragment를 BackStack에서 제거한다.
+    fun removeFragment(name:String){
+        supportFragmentManager.popBackStack(name, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+    }
 }
+data class UserInfo(val userId: String, var userPw: String, var userNickName: String, var userAge: Long, var userHobby: MutableList<String>)
