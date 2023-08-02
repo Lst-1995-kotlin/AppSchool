@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.os.SystemClock
 import android.view.View
 import android.view.animation.AnticipateInterpolator
+import android.view.inputmethod.InputMethodManager
 import androidx.core.splashscreen.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
@@ -18,7 +19,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.transition.MaterialSharedAxis
 import com.test.mini02_boardproject01.databinding.ActivityMainBinding
-
+import kotlin.concurrent.thread
 
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +33,8 @@ class MainActivity : AppCompatActivity() {
     var joinUserPw: String? = null
 
     lateinit var nowLoginUser: UserInfo
+
+    var selPostIdx = 0L
 
     companion object{
         val LOGIN_FRAGMENT = "LoginFragment"
@@ -47,6 +50,11 @@ class MainActivity : AppCompatActivity() {
         Manifest.permission.INTERNET,
         Manifest.permission.READ_EXTERNAL_STORAGE,
         Manifest.permission.ACCESS_MEDIA_LOCATION
+    )
+
+    // 게시판 종류
+    val boardTypeList = arrayOf(
+        "자유게시판", "유머게시판", "질문게시판", "스포츠게시판"
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -190,5 +198,18 @@ class MainActivity : AppCompatActivity() {
     fun removeFragment(name:String){
         supportFragmentManager.popBackStack(name, FragmentManager.POP_BACK_STACK_INCLUSIVE)
     }
+
+    // 입력 요소에 포커스를 주는 메서드
+    fun showSoftInput(view: View){
+        view.requestFocus()
+
+        val inputMethodManger = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        thread {
+            SystemClock.sleep(200)
+            inputMethodManger.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT)
+        }
+    }
+
 }
 data class UserInfo(val userId: String, var userPw: String, var userNickName: String, var userAge: Long, var userHobby: MutableList<String>)
+

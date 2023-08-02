@@ -58,6 +58,15 @@
                     android:inputType="text|textPersonName|textMultiLine" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <Button
+                android:id="@+id/buttonPostWriteType"
+                style="@style/Widget.Material3.Button.IconButton.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="게시판 종류 선택"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
             <ImageView
                 android:id="@+id/imageViewPostWrite"
                 android:layout_width="match_parent"
