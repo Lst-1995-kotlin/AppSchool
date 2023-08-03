@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+
 import com.test.mini02_boardproject01.VM.ViewModelPost
 import com.test.mini02_boardproject01.databinding.FragmentPostReadBinding
 
@@ -17,6 +18,11 @@ class PostReadFragment : Fragment() {
     lateinit var mainActivity: MainActivity
 
     lateinit var viewModelPost: ViewModelPost
+
+    override fun onResume() {
+        super.onResume()
+        viewModelPost.postGetOne()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,20 +35,19 @@ class PostReadFragment : Fragment() {
 
         viewModelPost = ViewModelProvider(mainActivity)[ViewModelPost::class.java]
 
-        viewModelPost.postGetOne(mainActivity.selPostIdx)
-
         fragmentPostReadBinding.run{
-
 
             viewModelPost.run{
                 postData.observe(mainActivity){
                     textInputEditTextPostReadSubject.setText(it.postSubject)
                     textInputEditTextPostReadText.setText(it.postText)
+                    textViePostReadWriteUserId.text = it.postWriterUserId
+                    textViePostReadWriteTime.text = it.postWriteDate
+                }
+                postImageData.observe(mainActivity){
+                    imageView.setImageBitmap(it)
                 }
             }
-
-            //viewModelPost.postGetOne(mainActivity.selPostIdx)
-
 
             toolbarPostRead.run{
                 title = "글읽기"

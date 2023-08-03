@@ -162,16 +162,20 @@ class PostWriteFragment : Fragment() {
 
                                 val postDataClass = PostDataClass(postIdx, boardType.toLong(), subject, text, writeDate, fileName, mainActivity.nowLoginUser.userId)
 
-                                postAdd(postDataClass)
+                                postAdd(postDataClass){
+                                    if(uploadUri != null){
+                                        postImageAdd(uploadUri!!, fileName){
+                                            Snackbar.make(fragmentPostWriteBinding.root, "저장되었습니다.", Snackbar.LENGTH_SHORT).show()
+                                            mainActivity.selPostIdx = postIdx
+                                        }
+                                    } else {
+                                        Snackbar.make(fragmentPostWriteBinding.root, "저장되었습니다.", Snackbar.LENGTH_SHORT).show()
+                                        mainActivity.selPostIdx = postIdx
+                                    }
 
-                                if(uploadUri != null){
-                                    postImageAdd(uploadUri!!, fileName)
+                                    mainActivity.replaceFragment(MainActivity.POST_READ_FRAGMENT, true, null)
                                 }
 
-                                Snackbar.make(fragmentPostWriteBinding.root, "저장되었습니다.", Snackbar.LENGTH_SHORT).show()
-                                mainActivity.selPostIdx = postIdx
-
-                                mainActivity.replaceFragment(MainActivity.POST_READ_FRAGMENT, true, null)
                             }
                         }
                     }

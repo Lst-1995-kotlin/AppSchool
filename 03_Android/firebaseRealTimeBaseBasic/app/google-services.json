@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "267818811104",
+    "firebase_url": "https://fb-studybasic-default-rtdb.firebaseio.com",
+    "project_id": "fb-studybasic",
+    "storage_bucket": "fb-studybasic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267818811104:android:35b048bf28901982459a85",
+        "android_client_info": {
+          "package_name": "com.test.firebaserealtimebasebasic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267818811104-v29b5jl8vu0uonv26s3plp95t2tm26sf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsIq96fvocNqgpACuX0mkZgJgIwDWPmlk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267818811104-v29b5jl8vu0uonv26s3plp95t2tm26sf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

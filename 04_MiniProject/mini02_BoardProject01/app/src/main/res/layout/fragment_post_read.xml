@@ -43,6 +43,20 @@
                     android:text="제목입니다" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/textViePostReadWriteUserId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAlignment="viewEnd" />
+
+            <TextView
+                android:id="@+id/textViePostReadWriteTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAlignment="viewEnd" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutPostReadText"
                 android:layout_width="match_parent"

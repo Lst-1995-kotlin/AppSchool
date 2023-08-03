@@ -15,9 +15,11 @@ import androidx.core.splashscreen.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.transition.MaterialSharedAxis
+import com.test.mini02_boardproject01.VM.ViewModelPost
 import com.test.mini02_boardproject01.databinding.ActivityMainBinding
 import kotlin.concurrent.thread
 
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     var joinUserPw: String? = null
 
     lateinit var nowLoginUser: UserInfo
+    lateinit var viewModelPost: ViewModelPost
 
     var selPostIdx = 0L
 
@@ -44,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         val POST_WRITE_FRAGMENT = "PostWriteFragment"
         val POST_READ_FRAGMENT = "PostReadFragment"
         val POST_MODIFY_FRAGMENT = "PostModifyFragment"
+        lateinit var mainActivity: MainActivity
     }
 
     val permissionList = arrayOf(
@@ -68,7 +72,11 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
 
+        mainActivity = this
+
         requestPermissions(permissionList, 0)
+
+        viewModelPost = ViewModelProvider(mainActivity)[ViewModelPost::class.java]
 
         replaceFragment(LOGIN_FRAGMENT, false, null)
     }
