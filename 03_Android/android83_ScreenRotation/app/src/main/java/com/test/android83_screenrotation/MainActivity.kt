@@ -1,10 +1,8 @@
 package com.test.android83_screenrotation
 
-import android.os.Binder
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.widget.Toast
 import com.test.android83_screenrotation.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

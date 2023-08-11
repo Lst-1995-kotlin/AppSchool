@@ -59,6 +59,7 @@ class PostWriteFragment : Fragment() {
 
         // 카메라 설정
         cameraLauncher = cameraSetting(fragmentPostWriteBinding.imageViewPostWrite)
+        // 앨범 설정
         albumLauncher = albumSetting(fragmentPostWriteBinding.imageViewPostWrite)
 
         fragmentPostWriteBinding.run{
